@@ -1,0 +1,41 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+--------------------------------------------------------
+
+entity IO_T is --IO [MODE] [IO_ADDR] [REG_ADDR]
+
+generic
+    (
+        dataWidth : natural := 8;
+        addrWidth : natural := 8
+    );
+port(	
+	mode:	in std_logic;
+	IO_ADDR:	in std_logic_vector(addrWidth-1 downto 0);
+	result:	out std_logic_vector(dataWidth-1 downto 0)
+);
+
+end IO;
+
+--------------------------------------------------------
+
+architecture behv of IO_T is
+
+-- define a temparary signal to store the result
+
+signal result: std_logic_vector(dataWidth-1 downto 0);
+ 
+begin					  
+ 
+    -- the 3rd bit should be carry
+	 
+	 --- case pra selecionar o IO com IO_ADDR 
+	 --- cada case pega um dos enderecos do io localizado 
+   
+
+end behv;
+
+--------------------------------------------------------
