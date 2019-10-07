@@ -1,35 +1,38 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
 
-entity unsigned_adder_subtractor is
+--------------------------------------------------------
 
-	generic
-	(
-		DATA_WIDTH : natural := 8
-	);
+entity ADDER is
 
-	port 
-	(
-		a		: in unsigned ((DATA_WIDTH-1) downto 0);
-		b		: in unsigned ((DATA_WIDTH-1) downto 0);
-		add_sub : in std_logic;
-		result	: out unsigned ((DATA_WIDTH-1) downto 0)
-	);
+generic(n: natural :=2);
+port(	A:	in std_logic_vector(n-1 downto 0);
+	B:	in std_logic_vector(n-1 downto 0);
+	carry:	out std_logic;
+	sum:	out std_logic_vector(n-1 downto 0)
+);
 
-end entity;
+end ADDER;
 
-architecture rtl of unsigned_adder_subtractor is
-begin
+--------------------------------------------------------
 
-	process(a,b,add_sub)
-	begin
-		-- add if "add_sub" is 1, else subtract
-		if (add_sub = '1') then
-			result <= a + b;
-		else
-			result <= a - b;
-		end if;
-	end process;
+architecture behv of ADDER is
 
-end rtl;
+-- define a temparary signal to store the result
+
+signal result: std_logic_vector(n downto 0);
+ 
+begin					  
+ 
+    -- the 3rd bit should be carry
+   
+    result <= ('0' & A)+('0' & B);
+    sum <= result(n-1 downto 0);
+    carry <= result(n);
+
+end behv;
+
+--------------------------------------------------------
+
