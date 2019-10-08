@@ -13,13 +13,26 @@ OPCODE | USAGE                                                     | DESRIPTION
 
 
 
-## Code example V0.3
+## Code example V0.4
 
 ```
 INICIO:
+
+
+IO 0 1 6
+SUBC 0 1
+JMPZ ADDHORA
+
 IO 0 0 0 
 SUBC 0 1
 JMPZ INICIO
+
+
+
+
+
+
+
 COUNT 1
 SUBC 1 60
 JMPZ MINPROC
@@ -49,9 +62,14 @@ SUBC 6 1
 JMPZ HRPROC
 
 
+:ADDHORA
+COUNT 5 1
+JMPZ HRPROC
+
+
 
 ```
-
+## Code example V0.3
 ```
 0000000000000000
 0010000000000010
@@ -96,11 +114,12 @@ JMPZ HRPROC
 - 5 HR SEGMENTS IO
 - 6 AM-PM
 
-##### IO ADDRESS
+##### REG ADDRESS
 - 0 TIME IO FLAG
 - 1 SECOND REGISTER
 - 2 MIN REGISTER
 - 3 MIN-DEC REGISTER
 - 4 HR REGISTER
 - 5 HR-DEC REGISTER
+- 6 BUTTON REG
 
