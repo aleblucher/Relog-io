@@ -42,13 +42,16 @@ ARCHITECTURE arch OF relogio is
     SIGNAL out_ROM : std_logic_vector(15 DOWNTO 0);
     SIGNAL imediato,
 	 in_pc,
-	 out_pc, out_adder,
+	 out_pc, out_adder, out_addergen,
 	 out_bank0,
 	 out_bank1,
 	 out_bank2,
 	 out_bank3,
 	 out_bank4,
-	 out_bank5, out_bank,
+	 out_bank5,
+	 out_bank6,
+	 out_bank7,
+	 out_bank,
 	 in_ulaa,  in_ulab,
 	 out_ula, in_bank,
 	 out_io, in_io,
@@ -143,9 +146,10 @@ ARCHITECTURE arch OF relogio is
 				-- enable item ??
 				reg_address <= out_ROM(5 downto 3);
 				in_bank <= out_ROM(14 downto 6);
-			when "100" => -- COUNT [REG_ADDRESS] add 1 to count adress
+			when "100" => -- COUNT [REG_ADDRESS] [NUMERO<9>] add 1 to count adress
 				reg_address <= out_ROM(5 downto 3);
-				in_bank <= out_adder;
+				imediate <= out_ROM(14 downto 6);
+				in_bank <= out_addergen;
 				
 				--imediate <= out_ROM(14 downto 6) ???
 				--count or add ? if has a counter register COUNT [REG_ADDRESS] [REG_ADDRESS] add imediate to count adress
@@ -183,6 +187,12 @@ ARCHITECTURE arch OF relogio is
 			when "101" =>
 				enable_bank(5) <= '1';
 				out_bank <= out_bank5;
+			when "110" =>
+				enable_bank(6) <= '1';
+				out_bank <= out_bank6;
+			when "111" =>
+				enable_bank(7) <= '1';
+				out_bank <= out_bank7;
 			when others =>
 				enable_bank <= (others => '0');
 		
@@ -193,23 +203,11 @@ ARCHITECTURE arch OF relogio is
 	end process;
 	
 --	
---	IO : ENTITY work.IO_T PORT MAP(clk => clk, 
---		enable => enable_io,
---		mode => mode,
---		IO_ADDR => io_address,
---		data => out_bank,
---		result => out_io,
---		displays_7seg => display_7seg,
---		button => sw_controll(0),
---		HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6,
---		SW => SW
---	);
-	
-	IO_TEST : ENTITY work.IO_T PORT MAP(clk => clk, 
-		enable => '1',
-		mode => '1',
-		IO_ADDR => "010",
-		data => "000000011",
+	IO : ENTITY work.IO_T PORT MAP(clk => clk, 
+		enable => enable_io,
+		mode => mode,
+		IO_ADDR => io_address,
+		data => out_bank,
 		result => out_io,
 		displays_7seg => display_7seg,
 		button => sw_controll(0),
@@ -217,8 +215,20 @@ ARCHITECTURE arch OF relogio is
 		SW => SW
 	);
 	
+--	IO_TEST : ENTITY work.IO_T PORT MAP(clk => clk, 
+--		enable => '1',
+--		mode => '1',
+--		IO_ADDR => "011",
+--		data => "000000101",
+--		result => out_io,
+--		displays_7seg => display_7seg,
+--		button => sw_controll(0),
+--		HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6,
+--		SW => SW
+--	);
 	
-	MUX_ULA : ENTITY work.MUX GENERIC MAP (larguraDados => 9) PORT MAP (IN_A => out_bank, IN_B => imediate, sel => sel_pc, mux_out => in_ulaa);
+	
+	--MUX_ULA : ENTITY work.MUX GENERIC MAP (larguraDados => 9) PORT MAP (IN_A => out_bank, IN_B => imediate, sel => sel_pc, mux_out => in_ulaa);
 
 	
 --	TEMPO_SEG: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk);
@@ -232,7 +242,8 @@ ARCHITECTURE arch OF relogio is
 	MUX_PC : ENTITY work.mux PORT MAP (IN_A => out_adder, IN_B => imediate, sel => sel_pc, mux_out => in_pc);
 	 
 	ADDER : ENTITY work.ADDER GENERIC MAP (n => 9) PORT MAP (A => "000000001", B => out_pc, sum => out_adder, carry => carry); --define generic default for data n & larguraDados
-	 
+	ADDERGEN : ENTITY work.ADDER GENERIC MAP (n => 9) PORT MAP (A => imediate, B => out_bank, sum => out_addergen, carry => carry); --define generic default for data n & larguraDados
+	
 	SUBADDER : ENTITY work.SUBADDER GENERIC MAP (n => 9) PORT MAP (A => out_bank, B => imediate, sum => out_subadder, zf => flag_z); --define generic default for data n & larguraDados
 	 
 	 
@@ -246,6 +257,10 @@ ARCHITECTURE arch OF relogio is
 	REG_MIN_DEC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(3), q => out_bank3, RST => reset_reg);
 	REG_HORA : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(4), q => out_bank4, RST => reset_reg);
 	REG_HORA_DEC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(5), q => out_bank5, RST => reset_reg);
+
+	REG_AM_PM: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(6), q => out_bank6, RST => reset_reg);
+	
+	ADD_HR: ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(7), q => out_bank7, RST => reset_reg);
 
 	REG_TEMPO : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(0), q => out_bank0, RST => reset_reg);
 	

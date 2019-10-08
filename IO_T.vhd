@@ -32,7 +32,7 @@ end IO_T;
 architecture behv of IO_T is
 SIGNAL hr: std_logic_vector(13 DOWNTO 0);
 SIGNAL min, min_dec: std_logic_vector(6 DOWNTO 0); --for debunggin only 
-SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, teste_io_time: std_logic;
+SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, teste_io_time, bagulho, teste_bagulho: std_logic;
 SIGNAL HEXXX: STD_LOGIC_VECTOR(6 downto 0);
 SIGNAL results:	std_logic_vector(dataWidth-1 downto 0);
 SIGNAL HEX00, HEX11, HEX22, HEX33, HEX44 : STD_LOGIC_VECTOR(6 downto 0);
@@ -42,11 +42,13 @@ begin
 
 -- define a temparary signal to store the result
 
-	TEMPO_SEG3: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk3);
+	TEMPO_SEG3: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 50000000) PORT MAP (clk => clk, saida_clk => saida_clk3);
 	
-	TEMPO_SEG2: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk2);
-	TEMPO_SEG1: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk1);
-	TEMPO_SEG: ENTITY work.divisorGenerico PORT MAP (clk => CLK, saida_clk => saida_clk);
+	TEMPO_SEG2: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 25000000) PORT MAP (clk => clk, saida_clk => saida_clk2);
+	TEMPO_SEG1: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 12000000) PORT MAP (clk => clk, saida_clk => saida_clk1);
+	TEMPO_SEG: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 6000000) PORT MAP (clk => CLK, saida_clk => saida_clk);
+	
+	TEMPO_SEG_TICK_BAGULHO: ENTITY work.divisorGenerico(divInteiro) GENERIC MAP (divisor=> 200) PORT MAP (clk => SW(3), saida_clk => bagulho);
 
 	
 	HEX_X : ENTITY work.conversorHex7Seg PORT MAP(dadoHex => data(3 downto 0), saida7seg => HEXXX);
@@ -54,14 +56,12 @@ begin
 	process (clk)
 	begin
 	if saida_clk3 = '1' then
-			if teste_io_time = '1' then
-				teste_io_time <='0';
-			else
-				teste_io_time <='1';
-			end if;
-			
-			
-		end if;
+		teste_io_time <=not teste_io_time;
+	end if;
+	if bagulho='1' then
+		teste_bagulho <= not teste_bagulho;
+		
+	end if;
 	end process;
 	
 	process (ALL)
@@ -73,20 +73,21 @@ begin
 			
 			when "000" =>-- time IO
 			
-				case SW is
-					when "000000000000000001" =>
-					
-						results <= "00000000" & saida_clk1;
-					when "000000000000000010" =>
-					
-						results <= "00000000" & saida_clk2;
-					when "000000000000000011" =>
-					
-						results <= "00000000" & saida_clk3;
-					when others =>
-					
-						results <= "00000000" & saida_clk;
-				end case;
+--				case SW is
+--					when "000000000000000001" =>
+--					
+--						results <= "00000000" & saida_clk1;
+--					when "000000000000000010" =>
+--					
+--						results <= "00000000" & saida_clk2;
+--					when "000000000000000011" =>
+--					
+--						results <= "00000000" & saida_clk3;
+--					when others =>
+--					
+--						results <= "00000000" & saida_clk;
+--				end case;
+						results <= "00000000" & sw(3);
 --				
 				
 				
@@ -136,9 +137,9 @@ begin
 		HEX1 <= HEX11;
 		HEX2 <= HEX22;
 		HEX3 <= HEX33;
-		HEX4 <= "111111" & saida_clk3;
-		HEX5 <= "111111" & clk;
-		
+		HEX4 <= "111111" & sw(3);
+		HEX5 <= "111111" & teste_io_time;
+		HEX6 <= "111111" & bagulho;
 		
 	
 	

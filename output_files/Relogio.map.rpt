@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Tue Oct  8 13:25:21 2019
+Tue Oct  8 15:13:41 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -13,35 +13,44 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |relogio
- 10. Parameter Settings for User Entity Instance: IO_T:IO_TEST
- 11. Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG3
- 12. Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG2
- 13. Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG1
- 14. Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG
- 15. Parameter Settings for User Entity Instance: MUX:MUX_ULA
- 16. Parameter Settings for User Entity Instance: memoria:ROM
- 17. Parameter Settings for User Entity Instance: MUX:MUX_PC
- 18. Parameter Settings for User Entity Instance: ADDER:ADDER
- 19. Parameter Settings for User Entity Instance: SUBADDER:SUBADDER
- 20. Parameter Settings for User Entity Instance: registradorGenerico:REG_SEG
- 21. Parameter Settings for User Entity Instance: registradorGenerico:REG_MIN
- 22. Parameter Settings for User Entity Instance: registradorGenerico:REG_MIN_DEC
- 23. Parameter Settings for User Entity Instance: registradorGenerico:REG_HORA
- 24. Parameter Settings for User Entity Instance: registradorGenerico:REG_HORA_DEC
- 25. Parameter Settings for User Entity Instance: registradorGenerico:REG_TEMPO
- 26. Parameter Settings for User Entity Instance: registradorGenerico:PC
- 27. Port Connectivity Checks: "registradorGenerico:PC"
- 28. Port Connectivity Checks: "registradorGenerico:REG_TEMPO"
- 29. Port Connectivity Checks: "ADDER:ADDER"
- 30. Port Connectivity Checks: "memoria:ROM"
- 31. Port Connectivity Checks: "MUX:MUX_ULA"
- 32. Port Connectivity Checks: "IO_T:IO_TEST|conversorHex7Seg:HEX_X"
- 33. Port Connectivity Checks: "IO_T:IO_TEST"
- 34. Post-Synthesis Netlist Statistics for Top Partition
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |relogio
+ 13. Parameter Settings for User Entity Instance: IO_T:IO
+ 14. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG3
+ 15. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG2
+ 16. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG1
+ 17. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG
+ 18. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG_TICK_BAGULHO
+ 19. Parameter Settings for User Entity Instance: memoria:ROM
+ 20. Parameter Settings for User Entity Instance: MUX:MUX_PC
+ 21. Parameter Settings for User Entity Instance: ADDER:ADDER
+ 22. Parameter Settings for User Entity Instance: ADDER:ADDERGEN
+ 23. Parameter Settings for User Entity Instance: SUBADDER:SUBADDER
+ 24. Parameter Settings for User Entity Instance: registradorGenerico:REG_SEG
+ 25. Parameter Settings for User Entity Instance: registradorGenerico:REG_MIN
+ 26. Parameter Settings for User Entity Instance: registradorGenerico:REG_MIN_DEC
+ 27. Parameter Settings for User Entity Instance: registradorGenerico:REG_HORA
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:REG_HORA_DEC
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:REG_AM_PM
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:ADD_HR
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:REG_TEMPO
+ 32. Parameter Settings for User Entity Instance: registradorGenerico:PC
+ 33. Port Connectivity Checks: "registradorGenerico:PC"
+ 34. Port Connectivity Checks: "registradorGenerico:REG_TEMPO"
+ 35. Port Connectivity Checks: "ADDER:ADDERGEN"
+ 36. Port Connectivity Checks: "ADDER:ADDER"
+ 37. Port Connectivity Checks: "memoria:ROM"
+ 38. Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_X"
+ 39. Port Connectivity Checks: "IO_T:IO|divisorGenerico:TEMPO_SEG"
+ 40. Port Connectivity Checks: "IO_T:IO|divisorGenerico:TEMPO_SEG1"
+ 41. Port Connectivity Checks: "IO_T:IO|divisorGenerico:TEMPO_SEG2"
+ 42. Port Connectivity Checks: "IO_T:IO"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -67,15 +76,15 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct  8 13:25:21 2019           ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct  8 15:13:41 2019           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; Relogio                                         ;
 ; Top-level Entity Name              ; relogio                                         ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 6                                               ;
-;     Total combinational functions  ; 6                                               ;
-;     Dedicated logic registers      ; 5                                               ;
-; Total registers                    ; 5                                               ;
+; Total logic elements               ; 102                                             ;
+;     Total combinational functions  ; 102                                             ;
+;     Dedicated logic registers      ; 46                                              ;
+; Total registers                    ; 46                                              ;
 ; Total pins                         ; 120                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -211,20 +220,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 6         ;
+; Estimated Total logic elements              ; 102       ;
 ;                                             ;           ;
-; Total combinational functions               ; 6         ;
+; Total combinational functions               ; 102       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 3         ;
-;     -- 3 input functions                    ; 1         ;
-;     -- <=2 input functions                  ; 2         ;
+;     -- 4 input functions                    ; 17        ;
+;     -- 3 input functions                    ; 25        ;
+;     -- <=2 input functions                  ; 60        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 6         ;
-;     -- arithmetic mode                      ; 0         ;
+;     -- normal mode                          ; 62        ;
+;     -- arithmetic mode                      ; 40        ;
 ;                                             ;           ;
-; Total registers                             ; 5         ;
-;     -- Dedicated logic registers            ; 5         ;
+; Total registers                             ; 46        ;
+;     -- Dedicated logic registers            ; 46        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 120       ;
@@ -232,22 +241,130 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 6         ;
-; Total fan-out                               ; 151       ;
-; Average fan-out                             ; 0.60      ;
+; Maximum fan-out                             ; 37        ;
+; Total fan-out                               ; 491       ;
+; Average fan-out                             ; 1.27      ;
 +---------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name     ; Library Name ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+-----------------+--------------+
-; |relogio                           ; 6 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 120  ; 0            ; |relogio                                         ; relogio         ; work         ;
-;    |IO_T:IO_TEST|                  ; 6 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO_TEST                            ; IO_T            ; work         ;
-;       |divisorGenerico:TEMPO_SEG3| ; 6 (6)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO_TEST|divisorGenerico:TEMPO_SEG3 ; divisorGenerico ; work         ;
-+------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+-----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name         ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+---------------------+--------------+
+; |relogio                                       ; 102 (6)             ; 46 (0)                    ; 0           ; 0            ; 0       ; 0         ; 120  ; 0            ; |relogio                                                ; relogio             ; work         ;
+;    |IO_T:IO|                                   ; 76 (12)             ; 36 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO                                        ; IO_T                ; work         ;
+;       |divisorGenerico:TEMPO_SEG3|             ; 49 (49)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG3             ; divisorGenerico     ; work         ;
+;       |divisorGenerico:TEMPO_SEG_TICK_BAGULHO| ; 15 (15)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG_TICK_BAGULHO ; divisorGenerico     ; work         ;
+;    |memoria:ROM|                               ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|memoria:ROM                                    ; memoria             ; work         ;
+;    |registradorGenerico:ADD_HR|                ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|registradorGenerico:ADD_HR                     ; registradorGenerico ; work         ;
+;    |registradorGenerico:PC|                    ; 9 (9)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|registradorGenerico:PC                         ; registradorGenerico ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                    ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                     ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+; IO_T:IO|HEX00[0]                                    ; IO_T:IO|Mux31                           ; yes                    ;
+; IO_T:IO|HEX00[3]                                    ; IO_T:IO|Mux31                           ; yes                    ;
+; IO_T:IO|HEX00[4]                                    ; IO_T:IO|Mux31                           ; yes                    ;
+; IO_T:IO|HEX00[5]                                    ; IO_T:IO|Mux31                           ; yes                    ;
+; IO_T:IO|HEX11[0]                                    ; IO_T:IO|Mux23                           ; yes                    ;
+; IO_T:IO|HEX11[3]                                    ; IO_T:IO|Mux23                           ; yes                    ;
+; IO_T:IO|HEX11[4]                                    ; IO_T:IO|Mux23                           ; yes                    ;
+; IO_T:IO|HEX11[5]                                    ; IO_T:IO|Mux23                           ; yes                    ;
+; IO_T:IO|HEX22[0]                                    ; IO_T:IO|Mux15                           ; yes                    ;
+; IO_T:IO|HEX22[3]                                    ; IO_T:IO|Mux15                           ; yes                    ;
+; IO_T:IO|HEX22[4]                                    ; IO_T:IO|Mux15                           ; yes                    ;
+; IO_T:IO|HEX22[5]                                    ; IO_T:IO|Mux15                           ; yes                    ;
+; IO_T:IO|HEX33[0]                                    ; IO_T:IO|Mux0                            ; yes                    ;
+; IO_T:IO|HEX33[3]                                    ; IO_T:IO|Mux0                            ; yes                    ;
+; IO_T:IO|HEX33[4]                                    ; IO_T:IO|Mux0                            ; yes                    ;
+; IO_T:IO|HEX33[5]                                    ; IO_T:IO|Mux0                            ; yes                    ;
+; IO_T:IO|teste_io_time                               ; IO_T:IO|divisorGenerico:TEMPO_SEG3|tick ; yes                    ;
+; io_address[0]                                       ; memoria:ROM|memROM                      ; yes                    ;
+; io_address[1]                                       ; memoria:ROM|memROM                      ; yes                    ;
+; io_address[2]                                       ; memoria:ROM|memROM                      ; yes                    ;
+; in_bank[0]                                          ; Mux38                                   ; yes                    ;
+; IO_T:IO|results[0]                                  ; IO_T:IO|Mux35                           ; yes                    ;
+; mode                                                ; memoria:ROM|memROM                      ; yes                    ;
+; Number of user-specified and inferred latches = 23  ;                                         ;                        ;
++-----------------------------------------------------+-----------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; registradorGenerico:REG_SEG|q[4]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN|q[4]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN_DEC|q[4]   ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA|q[4]      ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA_DEC|q[4]  ; Lost fanout                                 ;
+; registradorGenerico:REG_AM_PM|q[4]     ; Lost fanout                                 ;
+; registradorGenerico:ADD_HR|q[4]        ; Lost fanout                                 ;
+; registradorGenerico:REG_SEG|q[5]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN|q[5]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN_DEC|q[5]   ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA|q[5]      ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA_DEC|q[5]  ; Lost fanout                                 ;
+; registradorGenerico:REG_AM_PM|q[5]     ; Lost fanout                                 ;
+; registradorGenerico:ADD_HR|q[5]        ; Lost fanout                                 ;
+; registradorGenerico:REG_SEG|q[6]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN|q[6]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN_DEC|q[6]   ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA|q[6]      ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA_DEC|q[6]  ; Lost fanout                                 ;
+; registradorGenerico:REG_AM_PM|q[6]     ; Lost fanout                                 ;
+; registradorGenerico:ADD_HR|q[6]        ; Lost fanout                                 ;
+; registradorGenerico:REG_SEG|q[7]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN|q[7]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN_DEC|q[7]   ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA|q[7]      ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA_DEC|q[7]  ; Lost fanout                                 ;
+; registradorGenerico:REG_AM_PM|q[7]     ; Lost fanout                                 ;
+; registradorGenerico:ADD_HR|q[7]        ; Lost fanout                                 ;
+; registradorGenerico:REG_SEG|q[8]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN|q[8]       ; Lost fanout                                 ;
+; registradorGenerico:REG_MIN_DEC|q[8]   ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA|q[8]      ; Lost fanout                                 ;
+; registradorGenerico:REG_HORA_DEC|q[8]  ; Lost fanout                                 ;
+; registradorGenerico:REG_AM_PM|q[8]     ; Lost fanout                                 ;
+; registradorGenerico:ADD_HR|q[8]        ; Lost fanout                                 ;
+; registradorGenerico:REG_SEG|q[1]       ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_MIN|q[1]       ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_MIN_DEC|q[1]   ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_HORA|q[1]      ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_HORA_DEC|q[1]  ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_AM_PM|q[1]     ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:ADD_HR|q[1]        ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_SEG|q[2]       ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_MIN|q[2]       ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_MIN_DEC|q[2]   ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_HORA|q[2]      ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_HORA_DEC|q[2]  ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_AM_PM|q[2]     ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:ADD_HR|q[2]        ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_SEG|q[3]       ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_MIN|q[3]       ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_MIN_DEC|q[3]   ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_HORA|q[3]      ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_HORA_DEC|q[3]  ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_AM_PM|q[3]     ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:ADD_HR|q[3]        ; Stuck at GND due to stuck port data_in      ;
+; registradorGenerico:REG_AM_PM|q[0]     ; Merged with registradorGenerico:ADD_HR|q[0] ;
+; registradorGenerico:REG_HORA_DEC|q[0]  ; Merged with registradorGenerico:ADD_HR|q[0] ;
+; registradorGenerico:REG_HORA|q[0]      ; Merged with registradorGenerico:ADD_HR|q[0] ;
+; registradorGenerico:REG_MIN_DEC|q[0]   ; Merged with registradorGenerico:ADD_HR|q[0] ;
+; registradorGenerico:REG_MIN|q[0]       ; Merged with registradorGenerico:ADD_HR|q[0] ;
+; registradorGenerico:REG_SEG|q[0]       ; Merged with registradorGenerico:ADD_HR|q[0] ;
+; Total Number of Removed Registers = 62 ;                                             ;
++----------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -255,7 +372,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 5     ;
+; Total registers                              ; 46    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -263,6 +380,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |relogio|Mux40             ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |relogio|IO_T:IO|Mux1      ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |relogio|IO_T:IO|Mux9      ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |relogio|IO_T:IO|Mux22     ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |relogio|IO_T:IO|Mux30     ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |relogio|Mux13             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -281,64 +412,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: IO_T:IO_TEST ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; datawidth      ; 9     ; Signed Integer                   ;
-; addrwidth      ; 3     ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; datawidth      ; 9     ; Signed Integer              ;
+; addrwidth      ; 3     ; Signed Integer              ;
++----------------+-------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG3 ;
-+----------------+-------+-------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                        ;
-+----------------+-------+-------------------------------------------------------------+
-; divisor        ; 8     ; Signed Integer                                              ;
-+----------------+-------+-------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG3 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 50000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG2 ;
-+----------------+-------+-------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                        ;
-+----------------+-------+-------------------------------------------------------------+
-; divisor        ; 8     ; Signed Integer                                              ;
-+----------------+-------+-------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG2 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG1 ;
-+----------------+-------+-------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                        ;
-+----------------+-------+-------------------------------------------------------------+
-; divisor        ; 8     ; Signed Integer                                              ;
-+----------------+-------+-------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG1 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 12000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: IO_T:IO_TEST|divisorGenerico:TEMPO_SEG ;
-+----------------+-------+------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                       ;
-+----------------+-------+------------------------------------------------------------+
-; divisor        ; 8     ; Signed Integer                                             ;
-+----------------+-------+------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG ;
++----------------+---------+-----------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                ;
++----------------+---------+-----------------------------------------------------+
+; divisor        ; 6000000 ; Signed Integer                                      ;
++----------------+---------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MUX:MUX_ULA ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; larguradados   ; 9     ; Signed Integer                  ;
-+----------------+-------+---------------------------------+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG_TICK_BAGULHO ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; divisor        ; 200   ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -370,6 +501,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+---------------------------------+
 ; n              ; 9     ; Signed Integer                  ;
 +----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADDER:ADDERGEN ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; n              ; 9     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -434,6 +575,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REG_AM_PM ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:ADD_HR ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: registradorGenerico:REG_TEMPO ;
 +----------------+-------+---------------------------------------------------+
 ; Parameter Name ; Value ; Type                                              ;
@@ -472,6 +633,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADDER:ADDERGEN"                                                                      ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ADDER:ADDER"                                                                           ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
@@ -492,38 +662,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "MUX:MUX_ULA"                                                                           ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; mux_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_X" ;
++----------+-------+----------+------------------------------+
+; Port     ; Type  ; Severity ; Details                      ;
++----------+-------+----------+------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                 ;
+; negativo ; Input ; Info     ; Stuck at GND                 ;
+; overflow ; Input ; Info     ; Stuck at GND                 ;
++----------+-------+----------+------------------------------+
 
 
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "IO_T:IO_TEST|conversorHex7Seg:HEX_X" ;
-+----------+-------+----------+-----------------------------------+
-; Port     ; Type  ; Severity ; Details                           ;
-+----------+-------+----------+-----------------------------------+
-; apaga    ; Input ; Info     ; Stuck at GND                      ;
-; negativo ; Input ; Info     ; Stuck at GND                      ;
-; overflow ; Input ; Info     ; Stuck at GND                      ;
-+----------+-------+----------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|divisorGenerico:TEMPO_SEG"                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; saida_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|divisorGenerico:TEMPO_SEG1"                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; saida_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|divisorGenerico:TEMPO_SEG2"                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; saida_clk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "IO_T:IO_TEST"                                                                                ;
+; Port Connectivity Checks: "IO_T:IO"                                                                                     ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port          ; Type   ; Severity ; Details                                                                             ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
-; enable        ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; mode          ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; io_addr[2]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; io_addr[1]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; io_addr[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data[1..0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; data[8..2]    ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; displays_7seg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -534,17 +715,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 120                         ;
-; cycloneiii_ff         ; 5                           ;
-;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 8                           ;
-;     normal            ; 8                           ;
+; cycloneiii_ff         ; 46                          ;
+;     plain             ; 46                          ;
+; cycloneiii_lcell_comb ; 104                         ;
+;     arith             ; 40                          ;
+;         2 data inputs ; 40                          ;
+;     normal            ; 64                          ;
 ;         0 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 3                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 17                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.07                        ;
+; Max LUT depth         ; 4.50                        ;
+; Average LUT depth     ; 2.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -563,7 +747,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Tue Oct  8 13:25:10 2019
+    Info: Processing started: Tue Oct  8 15:13:31 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -610,144 +794,150 @@ Warning (10541): VHDL Signal Declaration warning at relogio.vhd(30): used implic
 Warning (10541): VHDL Signal Declaration warning at relogio.vhd(31): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
 Warning (10540): VHDL Signal Declaration warning at relogio.vhd(33): used explicit default value for signal "HEX7" because signal was never assigned a value File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
 Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(46): object "out_bank0" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 46
-Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(52): object "in_ulaa" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 52
-Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(54): object "in_io" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 54
-Warning (10541): VHDL Signal Declaration warning at relogio.vhd(57): used implicit default value for signal "reset_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 57
-Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(57): object "carry" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 57
-Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(57): object "enable_io" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 57
-Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(58): object "io_address" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 58
-Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(60): object "display_7seg" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 60
-Warning (10492): VHDL Process Statement warning at relogio.vhd(77): signal "op_ula" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at relogio.vhd(79): signal "flag_z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 79
-Warning (10492): VHDL Process Statement warning at relogio.vhd(88): signal "op_ula" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at relogio.vhd(96): signal "op_ula" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 96
-Warning (10492): VHDL Process Statement warning at relogio.vhd(100): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 100
-Warning (10492): VHDL Process Statement warning at relogio.vhd(101): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at relogio.vhd(102): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 102
-Warning (10492): VHDL Process Statement warning at relogio.vhd(104): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 104
-Warning (10492): VHDL Process Statement warning at relogio.vhd(106): signal "out_io" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 106
-Warning (10492): VHDL Process Statement warning at relogio.vhd(108): signal "out_bank" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 108
-Warning (10492): VHDL Process Statement warning at relogio.vhd(120): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 120
-Warning (10492): VHDL Process Statement warning at relogio.vhd(121): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 121
-Warning (10492): VHDL Process Statement warning at relogio.vhd(123): signal "out_subadder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 123
-Warning (10492): VHDL Process Statement warning at relogio.vhd(128): signal "flag_z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 128
-Warning (10492): VHDL Process Statement warning at relogio.vhd(131): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 131
-Warning (10492): VHDL Process Statement warning at relogio.vhd(134): signal "flag_z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 134
-Warning (10492): VHDL Process Statement warning at relogio.vhd(135): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 135
-Warning (10492): VHDL Process Statement warning at relogio.vhd(144): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 144
-Warning (10492): VHDL Process Statement warning at relogio.vhd(145): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 145
+Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(57): object "in_io" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 57
+Warning (10541): VHDL Signal Declaration warning at relogio.vhd(60): used implicit default value for signal "reset_reg" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 60
+Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(60): object "carry" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 60
+Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(63): object "display_7seg" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at relogio.vhd(80): signal "op_ula" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at relogio.vhd(82): signal "flag_z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at relogio.vhd(91): signal "op_ula" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at relogio.vhd(99): signal "op_ula" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at relogio.vhd(103): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at relogio.vhd(104): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at relogio.vhd(105): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at relogio.vhd(107): signal "mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at relogio.vhd(109): signal "out_io" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at relogio.vhd(111): signal "out_bank" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at relogio.vhd(123): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at relogio.vhd(124): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 124
+Warning (10492): VHDL Process Statement warning at relogio.vhd(126): signal "out_subadder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 126
+Warning (10492): VHDL Process Statement warning at relogio.vhd(131): signal "flag_z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at relogio.vhd(134): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at relogio.vhd(137): signal "flag_z" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 137
+Warning (10492): VHDL Process Statement warning at relogio.vhd(138): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 138
 Warning (10492): VHDL Process Statement warning at relogio.vhd(147): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 147
-Warning (10492): VHDL Process Statement warning at relogio.vhd(148): signal "out_adder" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 148
-Warning (10492): VHDL Process Statement warning at relogio.vhd(154): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 154
-Warning (10492): VHDL Process Statement warning at relogio.vhd(166): signal "reg_address" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 166
-Warning (10492): VHDL Process Statement warning at relogio.vhd(170): signal "out_bank1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 170
-Warning (10492): VHDL Process Statement warning at relogio.vhd(173): signal "out_bank2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 173
-Warning (10492): VHDL Process Statement warning at relogio.vhd(176): signal "out_bank3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 176
-Warning (10492): VHDL Process Statement warning at relogio.vhd(179): signal "out_bank4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 179
-Warning (10492): VHDL Process Statement warning at relogio.vhd(182): signal "out_bank5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 182
-Warning (10492): VHDL Process Statement warning at relogio.vhd(185): signal "out_bank5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 185
-Warning (10631): VHDL Process Statement warning at relogio.vhd(71): inferring latch(es) for signal or variable "sel_pc", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at relogio.vhd(71): inferring latch(es) for signal or variable "mode", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at relogio.vhd(71): inferring latch(es) for signal or variable "reg_address", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at relogio.vhd(71): inferring latch(es) for signal or variable "in_bank", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at relogio.vhd(71): inferring latch(es) for signal or variable "imediate", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at relogio.vhd(71): inferring latch(es) for signal or variable "enable_bank", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Warning (10631): VHDL Process Statement warning at relogio.vhd(71): inferring latch(es) for signal or variable "out_bank", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[0]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[1]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[2]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[3]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[4]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[5]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[6]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[7]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "out_bank[8]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "enable_bank[0]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "enable_bank[1]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "enable_bank[2]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "enable_bank[3]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "enable_bank[4]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "enable_bank[5]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[0]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[1]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[2]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[3]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[4]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[5]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[6]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[7]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "imediate[8]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[0]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[1]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[2]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[3]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[4]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[5]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[6]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[7]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "in_bank[8]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "reg_address[0]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "reg_address[1]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "reg_address[2]" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "mode" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (10041): Inferred latch for "sel_pc" at relogio.vhd(71) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 71
-Info (12128): Elaborating entity "IO_T" for hierarchy "IO_T:IO_TEST" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 208
-Warning (10541): VHDL Signal Declaration warning at IO_T.vhd(24): used implicit default value for signal "HEX6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at relogio.vhd(148): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 148
+Warning (10492): VHDL Process Statement warning at relogio.vhd(150): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 150
+Warning (10492): VHDL Process Statement warning at relogio.vhd(151): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 151
+Warning (10492): VHDL Process Statement warning at relogio.vhd(152): signal "out_addergen" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 152
+Warning (10492): VHDL Process Statement warning at relogio.vhd(158): signal "out_ROM" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 158
+Warning (10492): VHDL Process Statement warning at relogio.vhd(170): signal "reg_address" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 170
+Warning (10492): VHDL Process Statement warning at relogio.vhd(174): signal "out_bank1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 174
+Warning (10492): VHDL Process Statement warning at relogio.vhd(177): signal "out_bank2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at relogio.vhd(180): signal "out_bank3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 180
+Warning (10492): VHDL Process Statement warning at relogio.vhd(183): signal "out_bank4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 183
+Warning (10492): VHDL Process Statement warning at relogio.vhd(186): signal "out_bank5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 186
+Warning (10492): VHDL Process Statement warning at relogio.vhd(189): signal "out_bank5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 189
+Warning (10492): VHDL Process Statement warning at relogio.vhd(192): signal "out_bank6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 192
+Warning (10492): VHDL Process Statement warning at relogio.vhd(195): signal "out_bank7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 195
+Warning (10631): VHDL Process Statement warning at relogio.vhd(74): inferring latch(es) for signal or variable "sel_pc", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (10631): VHDL Process Statement warning at relogio.vhd(74): inferring latch(es) for signal or variable "mode", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (10631): VHDL Process Statement warning at relogio.vhd(74): inferring latch(es) for signal or variable "io_address", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (10631): VHDL Process Statement warning at relogio.vhd(74): inferring latch(es) for signal or variable "reg_address", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (10631): VHDL Process Statement warning at relogio.vhd(74): inferring latch(es) for signal or variable "in_bank", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (10631): VHDL Process Statement warning at relogio.vhd(74): inferring latch(es) for signal or variable "imediate", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (10631): VHDL Process Statement warning at relogio.vhd(74): inferring latch(es) for signal or variable "enable_bank", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[0]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[1]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[2]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[3]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[4]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[5]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[6]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "enable_bank[7]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[0]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[1]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[2]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[3]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[4]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[5]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[6]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[7]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "imediate[8]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[0]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[1]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[2]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[3]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[4]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[5]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[6]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[7]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "in_bank[8]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "reg_address[0]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "reg_address[1]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "reg_address[2]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "io_address[0]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "io_address[1]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "io_address[2]" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "mode" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (10041): Inferred latch for "sel_pc" at relogio.vhd(74) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (12128): Elaborating entity "IO_T" for hierarchy "IO_T:IO" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 206
 Warning (10541): VHDL Signal Declaration warning at IO_T.vhd(33): used implicit default value for signal "hr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 33
 Warning (10541): VHDL Signal Declaration warning at IO_T.vhd(34): used implicit default value for signal "min" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 34
 Warning (10541): VHDL Signal Declaration warning at IO_T.vhd(34): used implicit default value for signal "min_dec" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 34
+Warning (10036): Verilog HDL or VHDL warning at IO_T.vhd(35): object "saida_clk" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at IO_T.vhd(35): object "saida_clk1" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at IO_T.vhd(35): object "saida_clk2" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 35
 Warning (10036): Verilog HDL or VHDL warning at IO_T.vhd(38): object "HEX44" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 38
-Warning (10492): VHDL Process Statement warning at IO_T.vhd(56): signal "saida_clk3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 56
-Warning (10492): VHDL Process Statement warning at IO_T.vhd(57): signal "teste_io_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 57
-Warning (10631): VHDL Process Statement warning at IO_T.vhd(54): inferring latch(es) for signal or variable "teste_io_time", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 54
-Warning (10631): VHDL Process Statement warning at IO_T.vhd(132): inferring latch(es) for signal or variable "results", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (10631): VHDL Process Statement warning at IO_T.vhd(132): inferring latch(es) for signal or variable "HEX00", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (10631): VHDL Process Statement warning at IO_T.vhd(132): inferring latch(es) for signal or variable "HEX11", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (10631): VHDL Process Statement warning at IO_T.vhd(132): inferring latch(es) for signal or variable "HEX22", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (10631): VHDL Process Statement warning at IO_T.vhd(132): inferring latch(es) for signal or variable "HEX33", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX33[0]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX33[1]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX33[2]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX33[3]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX33[4]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX33[5]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX33[6]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX22[0]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX22[1]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX22[2]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX22[3]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX22[4]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX22[5]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX22[6]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX11[0]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX11[1]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX11[2]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX11[3]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX11[4]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX11[5]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX11[6]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX00[0]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX00[1]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX00[2]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX00[3]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX00[4]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX00[5]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "HEX00[6]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[0]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[1]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[2]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[3]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[4]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[5]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[6]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[7]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (10041): Inferred latch for "results[8]" at IO_T.vhd(132) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO_TEST|divisorGenerico:TEMPO_SEG3" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 45
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "IO_T:IO_TEST|conversorHex7Seg:HEX_X" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 52
-Info (12128): Elaborating entity "MUX" for hierarchy "MUX:MUX_ULA" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 221
-Info (12128): Elaborating entity "memoria" for hierarchy "memoria:ROM" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 227
-Info (12128): Elaborating entity "ADDER" for hierarchy "ADDER:ADDER" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 234
-Info (12128): Elaborating entity "SUBADDER" for hierarchy "SUBADDER:SUBADDER" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 236
+Warning (10492): VHDL Process Statement warning at IO_T.vhd(58): signal "saida_clk3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at IO_T.vhd(59): signal "teste_io_time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at IO_T.vhd(61): signal "bagulho" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at IO_T.vhd(62): signal "teste_bagulho" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 62
+Warning (10631): VHDL Process Statement warning at IO_T.vhd(56): inferring latch(es) for signal or variable "teste_io_time", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 56
+Warning (10631): VHDL Process Statement warning at IO_T.vhd(56): inferring latch(es) for signal or variable "teste_bagulho", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 56
+Warning (10631): VHDL Process Statement warning at IO_T.vhd(133): inferring latch(es) for signal or variable "results", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Warning (10631): VHDL Process Statement warning at IO_T.vhd(133): inferring latch(es) for signal or variable "HEX00", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Warning (10631): VHDL Process Statement warning at IO_T.vhd(133): inferring latch(es) for signal or variable "HEX11", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Warning (10631): VHDL Process Statement warning at IO_T.vhd(133): inferring latch(es) for signal or variable "HEX22", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Warning (10631): VHDL Process Statement warning at IO_T.vhd(133): inferring latch(es) for signal or variable "HEX33", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX33[0]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX33[1]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX33[2]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX33[3]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX33[4]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX33[5]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX33[6]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX22[0]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX22[1]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX22[2]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX22[3]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX22[4]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX22[5]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX22[6]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX11[0]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX11[1]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX11[2]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX11[3]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX11[4]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX11[5]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX11[6]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX00[0]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX00[1]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX00[2]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX00[3]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX00[4]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX00[5]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "HEX00[6]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[0]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[1]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[2]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[3]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[4]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[5]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[6]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[7]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "results[8]" at IO_T.vhd(133) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Info (10041): Inferred latch for "teste_io_time" at IO_T.vhd(56) File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 56
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG3" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 45
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG2" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 47
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG1" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 48
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 49
+Info (12129): Elaborating entity "divisorGenerico" using architecture "A:divinteiro" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG_TICK_BAGULHO" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 51
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "IO_T:IO|conversorHex7Seg:HEX_X" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 54
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:ROM" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 237
+Info (12128): Elaborating entity "MUX" for hierarchy "MUX:MUX_PC" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 242
+Info (12128): Elaborating entity "ADDER" for hierarchy "ADDER:ADDER" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 244
+Info (12128): Elaborating entity "SUBADDER" for hierarchy "SUBADDER:SUBADDER" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 247
 Warning (10631): VHDL Process Statement warning at SUBADDER.vhd(45): inferring latch(es) for signal or variable "sum", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
 Info (10041): Inferred latch for "sum[0]" at SUBADDER.vhd(45) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
 Info (10041): Inferred latch for "sum[1]" at SUBADDER.vhd(45) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
@@ -758,33 +948,58 @@ Info (10041): Inferred latch for "sum[5]" at SUBADDER.vhd(45) File: /home/bruno/
 Info (10041): Inferred latch for "sum[6]" at SUBADDER.vhd(45) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
 Info (10041): Inferred latch for "sum[7]" at SUBADDER.vhd(45) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
 Info (10041): Inferred latch for "sum[8]" at SUBADDER.vhd(45) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_SEG" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 243
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX33[2]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX33[1]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX33[3]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX33[0]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX33[4]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX33[5]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX33[6]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX22[0]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX22[1]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX22[2]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX22[3]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX22[4]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX22[5]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX22[6]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX11[0]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX11[1]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX11[2]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX11[3]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX11[4]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX11[5]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14025): LATCH primitive "IO_T:IO_TEST|HEX11[6]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14026): LATCH primitive "IO_T:IO_TEST|HEX00[0]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14026): LATCH primitive "IO_T:IO_TEST|HEX00[1]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14026): LATCH primitive "IO_T:IO_TEST|HEX00[2]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14026): LATCH primitive "IO_T:IO_TEST|HEX00[3]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
-Warning (14026): LATCH primitive "IO_T:IO_TEST|HEX00[6]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 132
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_SEG" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 254
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[1]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[2]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[3]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[4]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[5]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[6]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[7]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[8]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[0]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[0]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[1]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[2]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[3]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[4]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[5]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[6]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[7]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "SUBADDER:SUBADDER|sum[8]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (14025): LATCH primitive "imediate[0]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[1]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[2]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[3]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[4]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[5]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[6]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[7]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14025): LATCH primitive "imediate[8]" is permanently disabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14026): LATCH primitive "reg_address[2]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14026): LATCH primitive "reg_address[1]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Warning (14026): LATCH primitive "reg_address[0]" is permanently enabled File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX00[4]" merged with LATCH primitive "IO_T:IO|HEX00[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX00[5]" merged with LATCH primitive "IO_T:IO|HEX00[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX00[3]" merged with LATCH primitive "IO_T:IO|HEX00[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX11[4]" merged with LATCH primitive "IO_T:IO|HEX11[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX11[5]" merged with LATCH primitive "IO_T:IO|HEX11[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX11[3]" merged with LATCH primitive "IO_T:IO|HEX11[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX22[4]" merged with LATCH primitive "IO_T:IO|HEX22[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX22[5]" merged with LATCH primitive "IO_T:IO|HEX22[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX22[3]" merged with LATCH primitive "IO_T:IO|HEX22[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX33[4]" merged with LATCH primitive "IO_T:IO|HEX33[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX33[5]" merged with LATCH primitive "IO_T:IO|HEX33[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+    Info (13026): Duplicate LATCH primitive "IO_T:IO|HEX33[3]" merged with LATCH primitive "IO_T:IO|HEX33[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 133
+Warning (13012): Latch io_address[0] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[0] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch io_address[1] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[4] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch io_address[2] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 74
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[4] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch mode has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 60
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[3] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "fpga_led_pio[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 20
     Warning (13410): Pin "fpga_led_pio[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 20
@@ -820,34 +1035,18 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
     Warning (13410): Pin "LEDG[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
     Warning (13410): Pin "LEDG[7]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX4[1]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX4[2]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
@@ -860,13 +1059,12 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX6[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX6[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX6[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX6[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX6[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX6[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
-    Warning (13410): Pin "HEX6[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX6[4]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX6[5]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX7[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX7[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX7[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
@@ -875,11 +1073,11 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX7[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
     Warning (13410): Pin "HEX7[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 33
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 35 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 29 input pin(s) that do not drive logic
+Warning (21074): Design contains 27 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "reset" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
-    Warning (15610): No output dependent on input pin "sw_controll[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 19
     Warning (15610): No output dependent on input pin "sw_controll[1]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 19
     Warning (15610): No output dependent on input pin "sw_controll[2]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 19
     Warning (15610): No output dependent on input pin "sw_controll[3]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 19
@@ -892,7 +1090,6 @@ Warning (21074): Design contains 29 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[0]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
     Warning (15610): No output dependent on input pin "SW[1]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
     Warning (15610): No output dependent on input pin "SW[2]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
     Warning (15610): No output dependent on input pin "SW[4]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
     Warning (15610): No output dependent on input pin "SW[5]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
     Warning (15610): No output dependent on input pin "SW[6]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
@@ -907,14 +1104,14 @@ Warning (21074): Design contains 29 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[15]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
     Warning (15610): No output dependent on input pin "SW[16]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
     Warning (15610): No output dependent on input pin "SW[17]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 27
-Info (21057): Implemented 126 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 223 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 30 input pins
     Info (21059): Implemented 90 output pins
-    Info (21061): Implemented 6 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 212 warnings
-    Info: Peak virtual memory: 998 megabytes
-    Info: Processing ended: Tue Oct  8 13:25:21 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:27
+    Info (21061): Implemented 103 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 210 warnings
+    Info: Peak virtual memory: 1001 megabytes
+    Info: Processing ended: Tue Oct  8 15:13:41 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:23
 
 
