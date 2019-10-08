@@ -21,7 +21,8 @@ entity IO_T is
 		result:	out std_logic_vector(dataWidth-1 downto 0);
 		displays_7seg: out std_logic_vector(28-1 downto 0);
 		button:	in std_logic;
-		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6 : OUT STD_LOGIC_VECTOR(6 downto 0)
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6 : OUT STD_LOGIC_VECTOR(6 downto 0);
+		SW : IN STD_LOGIC_VECTOR(18-1 downto 0)
 	);
 
 end IO_T;
@@ -31,59 +32,97 @@ end IO_T;
 architecture behv of IO_T is
 SIGNAL hr: std_logic_vector(13 DOWNTO 0);
 SIGNAL min, min_dec: std_logic_vector(6 DOWNTO 0); --for debunggin only 
-SIGNAL saida_clk: std_logic;
+SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, teste_io_time: std_logic;
 SIGNAL HEXXX: STD_LOGIC_VECTOR(6 downto 0);
+SIGNAL results:	std_logic_vector(dataWidth-1 downto 0);
+SIGNAL HEX00, HEX11, HEX22, HEX33, HEX44 : STD_LOGIC_VECTOR(6 downto 0);
 begin	
 	
 	
 
 -- define a temparary signal to store the result
 
-	TEMPO_SEG: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk);
+	TEMPO_SEG3: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk3);
+	
+	TEMPO_SEG2: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk2);
+	TEMPO_SEG1: ENTITY work.divisorGenerico PORT MAP (clk => clk, saida_clk => saida_clk1);
+	TEMPO_SEG: ENTITY work.divisorGenerico PORT MAP (clk => CLK, saida_clk => saida_clk);
 
 	
 	HEX_X : ENTITY work.conversorHex7Seg PORT MAP(dadoHex => data(3 downto 0), saida7seg => HEXXX);
 	
+	process (clk)
+	begin
+	if saida_clk3 = '1' then
+			if teste_io_time = '1' then
+				teste_io_time <='0';
+			else
+				teste_io_time <='1';
+			end if;
+			
+			
+		end if;
+	end process;
+	
 	process (ALL)
 	begin
+	
+		
 		case IO_ADDR is --conversor pra numero
 			
 			
 			when "000" =>-- time IO
-				result <= "00000000" & saida_clk;
-				
+			
+				case SW is
+					when "000000000000000001" =>
+					
+						results <= "00000000" & saida_clk1;
+					when "000000000000000010" =>
+					
+						results <= "00000000" & saida_clk2;
+					when "000000000000000011" =>
+					
+						results <= "00000000" & saida_clk3;
+					when others =>
+					
+						results <= "00000000" & saida_clk;
+				end case;
+--				
 				
 				
 			when "001" =>-- button
-				result <= (others => button);
+				results <= "00000000" & button;
 				
 				
 				
-			when "011" =>-- MIN SEG o decimal
-				HEX0 <= "1111111";
+			when "010" =>-- MIN SEG o decimal
+				HEX00 <= HEXXX;
 	
 				
 				
 				
-			when "010" =>-- MIN SEG o nao decimal			
-				HEX1 <= "1111111";
+			when "011" =>-- MIN SEG o nao decimal			
+				HEX11 <= HEXXX;
 				
-			when "100" =>-- HR SEG
-				HEX2 <= "1111111";
-			when "101" =>-- HR SEG
-				HEX3 <= "1100111";
+			when "100" =>-- HR SEG decimal
+				HEX22 <= HEXXX;
+			when "101" =>-- HR SEG 
+				HEX33 <= HEXXX;
+			when "110" =>
+				if data(0) then
+					HEX44 <= "0111111";
+				else
+					HEX44 <= "0011111";
+				end if;
 			when others =>
-				HEX3 <= "1111111";
 		end case;
 	
 	
 	
 		
 		
-		HEX0 <= hr(13 downto 7);
-		HEX1 <= hr(6 downto 0);
-		HEX2 <= min;
-		HEX3 <= min_dec;
+		
+		
 		displays_7seg <= hr & min_dec & min;
 		
 		
@@ -91,10 +130,16 @@ begin
 		
 
 	end process;
-
+		result <= results;
  
+		HEX0 <= HEX00;
+		HEX1 <= HEX11;
+		HEX2 <= HEX22;
+		HEX3 <= HEX33;
+		HEX4 <= "111111" & saida_clk3;
+		HEX5 <= "111111" & clk;
 		
-
+		
 	
 	
  

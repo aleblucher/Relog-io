@@ -40,7 +40,20 @@ end entity;
 
 ARCHITECTURE arch OF relogio is
     SIGNAL out_ROM : std_logic_vector(15 DOWNTO 0);
-    SIGNAL imediato, in_pc, out_pc, out_adder, out_bank1,out_bank2,out_bank3,out_bank4,out_bank5, out_bank, in_ulaa,  in_ulab, out_ula, in_bank, out_io, in_io, enable_bank, out_subadder : std_logic_vector(8 DOWNTO 0); --can be less???
+    SIGNAL imediato,
+	 in_pc,
+	 out_pc, out_adder,
+	 out_bank0,
+	 out_bank1,
+	 out_bank2,
+	 out_bank3,
+	 out_bank4,
+	 out_bank5, out_bank,
+	 in_ulaa,  in_ulab,
+	 out_ula, in_bank,
+	 out_io, in_io,
+	 enable_bank, out_subadder
+	 : std_logic_vector(8 DOWNTO 0); --can be less???
     SIGNAL sel_pc, sel_ula, enable_buffer, mode, flag_z, reset_reg, carry, enable_pc, enable_io, saida_clk: std_logic;
     SIGNAL op_ula, io_address, reg_address: std_logic_vector(2 DOWNTO 0);
 	 SIGNAL imediate: std_logic_vector(8 DOWNTO 0); --for debunggin only 
@@ -153,7 +166,7 @@ ARCHITECTURE arch OF relogio is
 		case reg_address is
 		
 			when "000" =>
-				enable_bank(1) <= '1';
+				enable_bank(0) <= '1';
 				out_bank <= out_bank1;
 			when "001" =>
 				enable_bank(1) <= '1';
@@ -167,6 +180,9 @@ ARCHITECTURE arch OF relogio is
 			when "100" =>
 				enable_bank(4) <= '1';
 				out_bank <= out_bank5;
+			when "101" =>
+				enable_bank(5) <= '1';
+				out_bank <= out_bank5;
 			when others =>
 				enable_bank <= (others => '0');
 		
@@ -178,14 +194,15 @@ ARCHITECTURE arch OF relogio is
 	
 --	
 --	IO : ENTITY work.IO_T PORT MAP(clk => clk, 
---	enable => enable_io,
---	mode => mode,
---	IO_ADDR => io_address,
---	data => out_bank,
---	result => out_io,
---	displays_7seg => display_7seg,
---	button => sw_controll(0),
---	HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6
+--		enable => enable_io,
+--		mode => mode,
+--		IO_ADDR => io_address,
+--		data => out_bank,
+--		result => out_io,
+--		displays_7seg => display_7seg,
+--		button => sw_controll(0),
+--		HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6,
+--		SW => SW
 --	);
 	
 	IO_TEST : ENTITY work.IO_T PORT MAP(clk => clk, 
@@ -196,7 +213,8 @@ ARCHITECTURE arch OF relogio is
 		result => out_io,
 		displays_7seg => display_7seg,
 		button => sw_controll(0),
-		HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6
+		HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6,
+		SW => SW
 	);
 	
 	
@@ -222,16 +240,18 @@ ARCHITECTURE arch OF relogio is
 	 
 	 
 	
-	REG_SEG : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(0), q => out_bank1, RST => reset_reg);
+	REG_SEG : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(1), q => out_bank1, RST => reset_reg);
 			
-   REG_MIN : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(1), q => out_bank2, RST => reset_reg);
-	REG_MIN_DEC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(2), q => out_bank3, RST => reset_reg);
-	REG_HORA : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(3), q => out_bank4, RST => reset_reg);
-	REG_TEMPO : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(4), q => out_bank5, RST => reset_reg);
+   REG_MIN : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(2), q => out_bank2, RST => reset_reg);
+	REG_MIN_DEC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(3), q => out_bank3, RST => reset_reg);
+	REG_HORA : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(4), q => out_bank4, RST => reset_reg);
+	REG_HORA_DEC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(5), q => out_bank5, RST => reset_reg);
+
+	REG_TEMPO : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_bank, clk => CLK, enable => enable_bank(0), q => out_bank0, RST => reset_reg);
 	
 	
 	PC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_pc, clk => CLK, enable => '1', q => out_pc, RST => '0');
 	
-	HEX7 <= "0011000";
+	--HEX7 <= "0011000";
 	END;
     
