@@ -14,12 +14,25 @@ entity relogio is
     );
 
     PORT(
-		clk: 						in std_logic;
+		--clk: 						in std_logic;
 		reset: 					in std_logic;
 		sw_controll:			in std_logic_vector(5 downto 0);
-		display_7seg: 			out std_logic_vector((7*4)-1 downto 0);
+		fpga_led_pio  : out std_logic_vector(7-1 downto 0);
+		led: out std_logic;
 		
-		led: out std_logic
+		CLK : IN STD_LOGIC;
+        -- BOTOES
+        KEY: IN STD_LOGIC_VECTOR(quantidadeBotoes-1 DOWNTO 0);
+        -- CHAVES
+        SW : IN STD_LOGIC_VECTOR(quantidadeChaves-1 downto 0);
+        
+        -- LEDS
+        LEDR : OUT STD_LOGIC_VECTOR(quantidadeLedsRed-1 downto 0);
+        LEDG : OUT STD_LOGIC_VECTOR(quantidadeLedsGreen-1 downto 0);
+        -- DISPLAYS 7 SEG
+        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0):= (others => 'X')
+		  
+		  
 		
     );
 
@@ -31,8 +44,12 @@ ARCHITECTURE arch OF relogio is
     SIGNAL sel_pc, sel_ula, enable_buffer, mode, flag_z, reset_reg, carry, enable_pc, enable_io, saida_clk: std_logic;
     SIGNAL op_ula, io_address, reg_address: std_logic_vector(2 DOWNTO 0);
 	 SIGNAL imediate: std_logic_vector(8 DOWNTO 0); --for debunggin only 
-
+	 SIGNAL display_7seg: std_logic_vector((7*4)-1 downto 0);
     begin
+	 
+	 
+	 
+	 
 	 
 	 
 	 -- ===================== DECODER START ================================ TODO: separated file	
@@ -40,6 +57,8 @@ ARCHITECTURE arch OF relogio is
 	 
 	 process (clk)
 	 begin --isso deve ser o CPU ???
+	 
+		
 	 
 	 
 		case op_ula is
@@ -129,6 +148,8 @@ ARCHITECTURE arch OF relogio is
 		
 		
 		
+		
+		
 		case reg_address is
 		
 			when "000" =>
@@ -155,15 +176,30 @@ ARCHITECTURE arch OF relogio is
 		
 	end process;
 	
+--	
+--	IO : ENTITY work.IO_T PORT MAP(clk => clk, 
+--	enable => enable_io,
+--	mode => mode,
+--	IO_ADDR => io_address,
+--	data => out_bank,
+--	result => out_io,
+--	displays_7seg => display_7seg,
+--	button => sw_controll(0),
+--	HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6
+--	);
 	
-	IO : ENTITY work.IO_T PORT MAP(clk => clk, 
-	enable => enable_io,
-	mode => mode,
-	IO_ADDR => io_address,
-	data => out_bank,
-	result => out_io,
-	displays_7seg => display_7seg,
-	button => sw_controll(0));
+	IO_TEST : ENTITY work.IO_T PORT MAP(clk => clk, 
+		enable => '1',
+		mode => '1',
+		IO_ADDR => "010",
+		data => "000000011",
+		result => out_io,
+		displays_7seg => display_7seg,
+		button => sw_controll(0),
+		HEX0 => HEX0, HEX1 => HEX1, HEX2 => HEX2, HEX3 => HEX3, HEX4 => HEX4, HEX5 => HEX5, HEX6 => HEX6
+	);
+	
+	
 	MUX_ULA : ENTITY work.MUX GENERIC MAP (larguraDados => 9) PORT MAP (IN_A => out_bank, IN_B => imediate, sel => sel_pc, mux_out => in_ulaa);
 
 	
@@ -195,8 +231,7 @@ ARCHITECTURE arch OF relogio is
 	
 	
 	PC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_pc, clk => CLK, enable => '1', q => out_pc, RST => '0');
-
 	
-	 
-	 END;
+	HEX7 <= "0011000";
+	END;
     
