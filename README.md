@@ -13,25 +13,17 @@ OPCODE | USAGE                                                     | DESRIPTION
 
 
 
-## Code example V0.4
+## Code example V0.5
 
 ```
 INICIO:
-
-
-IO 0 1 6
-SUBC 0 1
-JMPZ ADDHORA
-
 IO 0 0 0 
 SUBC 0 1
 JMPZ INICIO
 
-
-
-
-
-
+IO 0 1 6
+SUBC 0 1
+JMPZ ADDHORA
 
 COUNT 1
 SUBC 1 60
@@ -60,7 +52,6 @@ COUNT 6
 IO 1 6 6
 SUBC 6 1
 JMPZ HRPROC
-
 
 :ADDHORA
 COUNT 5 1
