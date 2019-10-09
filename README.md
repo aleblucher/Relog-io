@@ -1,14 +1,20 @@
 # Relog-io
 
-OPCODE | USAGE                                                     | DESRIPTION
----    | ---                                                       | ---
-000    | IO    [MODE<1>]        [IO_ADDRESS<3>]   [REG_ADDRESS<3>] |
-001    | SUBC  [ADDRESS_REG<3>] [IMEDIATE<9>]                      |
-010    | JMPZ  [ADDRESS<9>]                                        |
-011    | SETE  [ADDRESS_REG<3>] [IMEDIATE<9>]                      |
-100    | COUNT [ADDRESS_REG<3>]                                    |
-101    | JMP   [ADDRESS<9>]                                        |
-111    | NOP                                                          |
+15  | 14  | 13  | 12  | 11  | 10  | 9   | 8   | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0
+--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+RESERVADO | I|M|E|D|I|A|T|E|-                                            | REG|| ADDRESS     |  INSTRUCT | CODE | -
+
+
+
+INSTCODE | USAGE                                                     | DESRIPTION
+---      | ---                                                       | ---
+000      | IO    [MODE<1>]        [IO_ADDRESS<3>]   [REG_ADDRESS<3>] |
+001      | SUBC  [ADDRESS_REG<3>] [IMEDIATE<9>]                      |
+010      | JMPZ  [ADDRESS<9>]                                        |
+011      | SETE  [ADDRESS_REG<3>] [IMEDIATE<9>]                      |
+100      | COUNT [ADDRESS_REG<3>] [IMEDIATE<9>]                      |
+101      | JMP   [ADDRESS<9>]                                        |
+111      | NOP                                                       |
 
 
 
@@ -60,7 +66,7 @@ JMPZ HRPROC
 
 
 ```
-## Code example V0.5
+## Code example V0.5 (bits invertidos)
 ```
 0000000000000000
 0010000000000010
@@ -102,8 +108,8 @@ JMPZ HRPROC
 - 1 WRITE MODE
 
 ##### IO ADDRESS
-- 0 TIME IO
-- 1 BUTTON 1 IO
+- 0 TIME IO - LAST BIT IS TICK FLAG
+- 1 BUTTON/SW IO - BUTTON in 0 and SW(11 - 4) in (8-1)
 - 2 MIN-DEC SEGMENTS IO
 - 3 MIN SEGMENTS IO
 - 4 HR-DEC SEGMENTS IO

@@ -24,16 +24,20 @@ architecture behv of SUBADDER is
 
 -- define a temparary signal to store the result
 
-signal result: std_logic_vector(n downto 0);
+signal result: std_logic_vector(n-1 downto 0);
  
 begin					  
  
     -- the 3rd bit should be carry
    
-	result <= ('0' & A)-('0' & B);
+	result <= (A)-(B);
 	zf <=
-		'1' when result<0 else
-		'0' when result>0;		
+		'1' when result="000000000" else
+		'0';		
+	sum <=
+		result when result="000000000" else
+		A;		
+		
 
 end behv;
 
