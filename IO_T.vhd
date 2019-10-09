@@ -1,7 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
+
+--use ieee.std_logic_arith.all;
+--use ieee.std_logic_unsigned.all;
 
 --------------------------------------------------------
 
@@ -21,7 +22,7 @@ entity IO_T is
 		result:	out std_logic_vector(dataWidth-1 downto 0);
 		displays_7seg: out std_logic_vector(28-1 downto 0);
 		button:	in std_logic;
-		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6 : OUT STD_LOGIC_VECTOR(6 downto 0);
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0);
 		SW : IN STD_LOGIC_VECTOR(18-1 downto 0)
 	);
 
@@ -32,91 +33,94 @@ end IO_T;
 architecture behv of IO_T is
 SIGNAL hr: std_logic_vector(13 DOWNTO 0);
 SIGNAL min, min_dec: std_logic_vector(6 DOWNTO 0); --for debunggin only 
-SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, teste_io_time, bagulho, teste_bagulho: std_logic;
-SIGNAL HEXXX: STD_LOGIC_VECTOR(6 downto 0);
-SIGNAL results:	std_logic_vector(dataWidth-1 downto 0);
+SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, saida_clk4, saida_clk5, saida_clk6, saida_clk7, teste_io_time, bagulho, teste_bagulho: std_logic;
+SIGNAL HEX_11, HEX_22, HEX_33, HEX_44: STD_LOGIC_VECTOR(6 downto 0);
+SIGNAL results, clk_out:	std_logic_vector(dataWidth-1 downto 0);
 SIGNAL HEX00, HEX11, HEX22, HEX33, HEX44 : STD_LOGIC_VECTOR(6 downto 0);
+
+SIGNAL IOMODE: std_logic_vector(addrWidth downto 0);
 begin	
 	
 	
 
 -- define a temparary signal to store the result
 
-	TEMPO_SEG3: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 50000000) PORT MAP (clk => clk, saida_clk => saida_clk3);
+	TEMPO_SEG3: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 50000000) PORT MAP (clk => clk, saida_clk => saida_clk);
 	
-	TEMPO_SEG2: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 25000000) PORT MAP (clk => clk, saida_clk => saida_clk2);
-	TEMPO_SEG1: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 12000000) PORT MAP (clk => clk, saida_clk => saida_clk1);
-	TEMPO_SEG: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 6000000) PORT MAP (clk => CLK, saida_clk => saida_clk);
-	
+	TEMPO_SEG2: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 25000000) PORT MAP (clk => clk, saida_clk => saida_clk1);
+	TEMPO_SEG1: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 12000000) PORT MAP (clk => clk, saida_clk => saida_clk2);
+	TEMPO_SEG: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 6000000) PORT MAP (clk => CLK, saida_clk => saida_clk3);
+	TEMPO_SEG4: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 3000000) PORT MAP (clk => CLK, saida_clk => saida_clk4);
+	TEMPO_SEG5: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 1500000) PORT MAP (clk => CLK, saida_clk => saida_clk5);
+	TEMPO_SEG6: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 750000) PORT MAP (clk => CLK, saida_clk => saida_clk6);
+	TEMPO_SEG7: ENTITY work.divisorGenerico GENERIC MAP (divisor=> 400000) PORT MAP (clk => CLK, saida_clk => saida_clk7);
 	TEMPO_SEG_TICK_BAGULHO: ENTITY work.divisorGenerico(divInteiro) GENERIC MAP (divisor=> 200) PORT MAP (clk => SW(3), saida_clk => bagulho);
 
 	
-	HEX_X : ENTITY work.conversorHex7Seg PORT MAP(dadoHex => data(3 downto 0), saida7seg => HEXXX);
+	HEX_0 : ENTITY work.conversorHex7Seg PORT MAP(dadoHex => data(3 downto 0), saida7seg => HEX_11);
+	HEX_1 : ENTITY work.conversorHex7Seg PORT MAP(dadoHex => data(3 downto 0), saida7seg => HEX_22);
+	HEX_2 : ENTITY work.conversorHex7Seg PORT MAP(dadoHex => data(3 downto 0), saida7seg => HEX_33);
+	HEX_3 : ENTITY work.conversorHex7Seg PORT MAP(dadoHex => data(3 downto 0), saida7seg => HEX_44);
 	
-	process (clk)
-	begin
-	if saida_clk3 = '1' then
-		teste_io_time <=not teste_io_time;
-	end if;
-	if bagulho='1' then
-		teste_bagulho <= not teste_bagulho;
+	IOMODE <= IO_ADDR & data(0);
+	
+	
+	
+		with SW(2 downto 0) select
+			clk_out <=  "00000000" & saida_clk1 when "001",
+						   "00000000" & saida_clk2 when "010",
+							"00000000" & saida_clk3 when "011",
+							"00000000" & saida_clk4 when "100",
+							"00000000" & saida_clk5 when "101",
+							"00000000" & saida_clk6 when "110",
+							"00000000" & sw(3) when "111",
+							"00000000" & saida_clk when others;
+							
+							
+		HEX00 <= HEX_11 when IO_ADDR = "010";
+		HEX11 <= HEX_22 when IO_ADDR = "011";
+		HEX22 <= HEX_33 when IO_ADDR = "100";
+		HEX33 <= HEX_44 when IO_ADDR = "101";
 		
-	end if;
-	end process;
+		result <= clk_out when IO_ADDR = "000" else
+					  "00000000" & button when IO_ADDR = "001";			  
+		
+			HEX44 <= "0111111" when IOMODE = "1101" else
+						"0011111" when IOMODE="1010";
+										  
+										 
+							
+							
 	
 	process (ALL)
 	begin
-	
-		
-		case IO_ADDR is --conversor pra numero
-			
-			
-			when "000" =>-- time IO
-			
---				case SW is
---					when "000000000000000001" =>
---					
---						results <= "00000000" & saida_clk1;
---					when "000000000000000010" =>
---					
---						results <= "00000000" & saida_clk2;
---					when "000000000000000011" =>
---					
---						results <= "00000000" & saida_clk3;
---					when others =>
---					
---						results <= "00000000" & saida_clk;
---				end case;
-						results <= "00000000" & sw(3);
---				
-				
-				
-			when "001" =>-- button
-				results <= "00000000" & button;
-				
-				
-				
-			when "010" =>-- MIN SEG o decimal
-				HEX00 <= HEXXX;
-	
-				
-				
-				
-			when "011" =>-- MIN SEG o nao decimal			
-				HEX11 <= HEXXX;
-				
-			when "100" =>-- HR SEG decimal
-				HEX22 <= HEXXX;
-			when "101" =>-- HR SEG 
-				HEX33 <= HEXXX;
-			when "110" =>
-				if data(0) then
-					HEX44 <= "0111111";
-				else
-					HEX44 <= "0011111";
-				end if;
-			when others =>
-		end case;
+--		case IO_ADDR is --conversor pra numero
+--			
+--			
+----			when "000" =>-- time IO
+----				results <= clk_out;				
+----				
+----			when "001" =>-- button
+----				results <= "00000000" & button;
+--	
+----			when "010" =>-- MIN SEG o decimal
+----				HEX00 <= HEX_11;
+----
+----			when "011" =>-- MIN SEG o nao decimal			
+----				HEX11 <= HEX_22;
+----				
+----			when "100" =>-- HR SEG decimal
+----				HEX22 <= HEX_33;
+----			when "101" =>-- HR SEG 
+----				HEX33 <= HEX_44;
+----			when "110" =>
+----				if data(0) then
+----					HEX44 <= "0111111";
+----				else
+----					HEX44 <= "0011111";
+----				end if;
+----			when others => 
+--		end case;
 	
 	
 	
@@ -131,18 +135,19 @@ begin
 		
 
 	end process;
-		result <= results;
+	
+	
+				
+	--	result <= results;
  
 		HEX0 <= HEX00;
 		HEX1 <= HEX11;
 		HEX2 <= HEX22;
 		HEX3 <= HEX33;
-		HEX4 <= "111111" & sw(3);
-		HEX5 <= "111111" & teste_io_time;
-		HEX6 <= "111111" & bagulho;
+		HEX4 <= HEX44;
+		HEX6 <= "111111" & result(0);
+		HEX7 <= "111111" & bagulho when "110" = IO_ADDR;
 		
-	
-	
  
     -- the 3rd bit should be carry
 	 

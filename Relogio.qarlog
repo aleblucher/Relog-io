@@ -1,0 +1,25 @@
+Quartus Prime Archive log --	/home/bruno/Documents/Insper/DesComp/Relog-io/Relogio.qarlog
+
+Archive:	/home/bruno/Documents/Insper/DesComp/Relog-io/Relogio.qar
+Date:		Tue Oct  8 23:05:08 2019
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+	=========== Files Selected: ===========
+/home/bruno/Documents/Insper/DesComp/Relog-io/ADDER.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/MUX.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/Relogio.qpf
+/home/bruno/Documents/Insper/DesComp/Relog-io/Relogio.qsf
+/home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/bancoRegistradores.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/divisorGenerico.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/output_files/conversorHex7Seg.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd
+/home/bruno/Documents/Insper/DesComp/Relog-io/romMif.vhd
+/home/bruno/intelFPGA/18.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 14 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

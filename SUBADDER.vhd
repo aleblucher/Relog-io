@@ -30,19 +30,10 @@ begin
  
     -- the 3rd bit should be carry
    
-
-	 process (ALL)
-	 begin
-		
-		 result <= ('0' & A)-('0' & B);
-		 if (result<0) then 
-			
-			 sum <= result(n-1 downto 0);
-			 zf <= '1';
-		else
-		zf <= '0';
-		 end if;
-	 end process;
+	result <= ('0' & A)-('0' & B);
+	zf <=
+		'1' when result<0 else
+		'0' when result>0;		
 
 end behv;
 

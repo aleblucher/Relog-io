@@ -2,7 +2,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity MUX is
+entity MUX2 is
     generic (
         -- Total de bits das entradas e saidas
         larguraDados    : natural  :=   9
@@ -16,7 +16,7 @@ entity MUX is
     );
 end entity;
 
-architecture comportamento of MUX is
+architecture comportamento of MUX2 is
 begin
   -- Para sintetizar lógica combinacional usando um processo,
   --  todas as entradas do modulo devem aparecer na lista de sensibilidade.
