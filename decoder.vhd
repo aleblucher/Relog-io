@@ -71,7 +71,7 @@ begin
 
 
 						
-	habilita_escrita <= '1' when (op_ula = "100" or op_ula =  "011" or op_ula = "001" or op_ula = "000") else '0';
+	habilita_escrita <= '1' when (op_ula = "100" or op_ula =  "011" or (op_ula = "001" and flag_z = '1') or (op_ula = "000" and mode='0')) else '0';
 				
 
 
@@ -87,7 +87,7 @@ begin
 						"000";
 						
 	in_bank <= out_io when (op_ula = "000" and mode='0') else
-				  out_addergen when op_ula = "000" else
+				  out_addergen when op_ula = "100" else
 				  out_ROM(14 downto 6) when op_ula = "011" else
 				  out_subadder when (op_ula = "001" and flag_z = '1') else
 				  "000000000";
