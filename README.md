@@ -2,13 +2,13 @@
 
 15  | 14  | 13  | 12  | 11  | 10  | 9   | 8   | 7   | 6   | 5   | 4   | 3   | 2   | 1   | 0
 --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-RESERVADO | I|M|E|D|I|A|T|E|-                                            | REG|| ADDRESS     |  INSTRUCT | CODE | -
+RESERVADO | I|M|E|D|I|A|T|E|-                                            | REG|-| ADDRESS     |  INSTRUCT | CODE | -
 
 
 
 INSTCODE | USAGE                                                     | DESRIPTION
 ---      | ---                                                       | ---
-000      | IO    [MODE<1>]        [IO_ADDRESS<3>]   [REG_ADDRESS<3>] |
+000      | IO    [REG_ADDRESS<3>] [IO_ADDRESS<3>] [MODE<1>]          |
 001      | SUBC  [ADDRESS_REG<3>] [IMEDIATE<9>]                      |
 010      | JMPZ  [ADDRESS<9>]                                        |
 011      | SETE  [ADDRESS_REG<3>] [IMEDIATE<9>]                      |
@@ -95,6 +95,25 @@ JMPZ HRPROC
 0101000100000000
 1001010000000000
 0101000100000000
+```
+
+```
+SETE 0 0
+COUNT 0 1
+IO 1 2 0
+JMP 0
+
+011 000 000000000
+100 000 000000001
+000 1 010 000
+101 000000001
+
+tmp(0) := "0000000000000011";
+tmp(1) := "0000000001000100";
+tmp(2) := "0000000000101000";
+tmp(3) := "0000000000001101";
+tmp(4) := "0000000000000111";
+
 ```
 
 

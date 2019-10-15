@@ -61,19 +61,25 @@ ARCHITECTURE arch OF relogio is
 				KEY(0);
 	 
 	 
-	--OP_ULAEZFLAG <= op_ula & flag_z;
+	OP_ULAEZFLAG <= op_ula & flag_z;
 	 
 	 
 	 
 	 -- ===================== DECODER START ================================ TODO: separated file	
-	--op_ula <= out_ROM(2 downto 0);
+	op_ula <= out_ROM(2 downto 0);
 	 
 		 
 
 
-
+	LEDG(2 downto 0) <= op_ula;
+	
+	--LEDG(4) <= sel_pc;
+	LEDG(5) <= habilita_escrita;
+	
+	LEDR(4 downto 0) <= out_pc(4 downto 0);
+	--LEDR(4 downto 0) <= imediate(4 downto 0);
 				
-	DECODER: ENTITY work.decoder PORT MAP(
+	ENTITY work.decoder PORT MAP(
 		CLK => CLK,
 		out_ROM => out_ROM,
 		out_addergen => out_addergen,
@@ -119,11 +125,11 @@ ARCHITECTURE arch OF relogio is
 	ADDER_1 : ENTITY work.ADDER GENERIC MAP (n => 9) PORT MAP (A => "000000001", B => out_pc, sum => out_adder, carry => carry); --define generic default for data n & larguraDados
 	ADDER_GENERIC : ENTITY work.ADDER GENERIC MAP (n => 9) PORT MAP (A => imediate, B => out_bank, sum => out_addergen, carry => carry); --define generic default for data n & larguraDados
 	
-	SUBADDER: ENTITY work.SUBADDER GENERIC MAP (n => 9) PORT MAP (A => out_bank, B => imediate, sum => out_subadder, zf => flag_z); --define generic default for data n & larguraDados
+	ENTITY work.SUBADDER GENERIC MAP (n => 9) PORT MAP (A => out_bank, B => imediate, sum => out_subadder, zf => flag_z); --define generic default for data n & larguraDados
 	 
 	 --- ====================================== "BANCO" DE REGISTRADORES =======================================
 	
-	BR: ENTITY work.bancoRegistradores port map(        
+	ENTITY work.bancoRegistradores port map(        
 		clk => clk,
 			endereco =>  REG_ADDRESS,
 			dadoEscrita => in_bank,
@@ -134,23 +140,19 @@ ARCHITECTURE arch OF relogio is
 	PC : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => 9)PORT MAP(data => in_pc, clk => CLK, enable => '1', q => out_pc, RST => '0');
 	
 	 
-
+	 
+	LEDR(17 downto 9) <= out_addergen;
+ 
+	LEDR(7 downto 5) <= reg_address;
 	
 	
 		 
-
+	LEDG(2 downto 0) <= op_ula;
 	
 	--LEDG(4) <= sel_pc;
 	LEDG(5) <= habilita_escrita;
 	
-	-- LEDR(4 downto 0) <= out_pc(4 downto 0);
-	--LEDR(4 downto 0) <= imediate(4 downto 0);
-	
-		LEDG(2 downto 0) <= op_ula;
-	
-
-	
-	LEDR(8 downto 0) <= in_bank;
+	LEDR(4 downto 0) <= out_pc(4 downto 0);
 	--LEDR(4 downto 0) <= imediate(4 downto 0);
 	
 	
