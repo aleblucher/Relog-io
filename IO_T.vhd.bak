@@ -32,7 +32,7 @@ end IO_T;
 architecture behv of IO_T is
 SIGNAL hr: std_logic_vector(13 DOWNTO 0);
 SIGNAL min, min_dec: std_logic_vector(6 DOWNTO 0); --for debunggin only 
-SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, saida_clk4, saida_clk5, saida_clk6, teste_io_time, bagulho, teste_bagulho, habH0, habH1, habH2, habH3, reset, need_reset: std_logic;
+SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, saida_clk4, saida_clk5, saida_clk6, teste_io_time, bagulho, teste_bagulho, habH0, habH1, habH2, habH3, reset: std_logic;
 SIGNAL HEX_11, HEX_22, HEX_33, HEX_44: STD_LOGIC_VECTOR(6 downto 0);
 SIGNAL results, clk_out:	std_logic_vector(dataWidth-1 downto 0);
 SIGNAL HEX00, HEX11, HEX22, HEX33, HEX44 : STD_LOGIC_VECTOR(6 downto 0);
@@ -77,13 +77,8 @@ begin
 							"00000000" & sw(3) when "111",
 							"00000000" & saida_clk when others;
 							
-		--reset <= '1' when (clk_out(0) = '1' and IO_ADDR = "000") else '0';
-		reset <= '1' when (not( IO_ADDR = "000") and need_reset='1') else '0';		
-		
-		
-		need_reset <= '1' when (IO_ADDR = "000") else '1' when (not( IO_ADDR = "000") and need_reset='1');
-		
-		
+		reset <= '1' when clk_out(0) = '1' else '0';
+							
 			
 							
 		habH0 <= '1' when IO_ADDR = "010" else '0';
