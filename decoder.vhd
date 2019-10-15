@@ -87,7 +87,7 @@ begin
 					"000000000";
 	
 	reg_address <= out_ROM(5 downto 3) when (op_ula = "100" or op_ula = "011" or op_ula = "010" or op_ula = "001" or op_ula = "000") else
-						"XXX";
+						"000";
 		
 	io_address <= out_ROM(8 downto 6) when op_ula = "000" else
 						"000";

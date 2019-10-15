@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Oct 15 16:01:09 2019
+Analysis & Synthesis Status : Successful - Tue Oct 15 17:27:28 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : Relogio
 Top-level Entity Name : relogio
 Family : Cyclone IV E
-Total logic elements : 452
-    Total combinational functions : 443
-    Dedicated logic registers : 203
-Total registers : 203
+Total logic elements : 504
+    Total combinational functions : 470
+    Dedicated logic registers : 227
+Total registers : 227
 Total pins : 112
 Total virtual pins : 0
 Total memory bits : 0

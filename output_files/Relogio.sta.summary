@@ -2,76 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -10.203
-TNS   : -631.364
-
 Type  : Slow 1200mV 85C Model Setup 'registradorGenerico:PC|q[0]'
-Slack : -9.766
-TNS   : -94.397
+Slack : -12.083
+TNS   : -119.369
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -10.237
+TNS   : -868.964
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.030
-TNS   : 0.000
+Slack : -0.276
+TNS   : -4.298
 
 Type  : Slow 1200mV 85C Model Hold 'registradorGenerico:PC|q[0]'
-Slack : 0.924
+Slack : 1.007
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -263.855
+TNS   : -294.695
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'registradorGenerico:PC|q[0]'
-Slack : 0.250
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -9.306
-TNS   : -560.780
+Slack : -0.238
+TNS   : -8.218
 
 Type  : Slow 1200mV 0C Model Setup 'registradorGenerico:PC|q[0]'
-Slack : -9.067
-TNS   : -87.606
+Slack : -11.209
+TNS   : -110.758
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -9.486
+TNS   : -780.291
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.041
-TNS   : -0.041
+Slack : -0.224
+TNS   : -3.461
 
 Type  : Slow 1200mV 0C Model Hold 'registradorGenerico:PC|q[0]'
-Slack : 0.877
+Slack : 0.888
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -263.855
+TNS   : -294.695
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'registradorGenerico:PC|q[0]'
-Slack : 0.234
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -5.104
-TNS   : -218.619
+Slack : -0.166
+TNS   : -5.307
 
 Type  : Fast 1200mV 0C Model Setup 'registradorGenerico:PC|q[0]'
-Slack : -4.497
-TNS   : -43.503
+Slack : -5.842
+TNS   : -57.602
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.698
+TNS   : -327.079
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.100
-TNS   : -0.247
+Slack : -0.369
+TNS   : -6.947
 
 Type  : Fast 1200mV 0C Model Hold 'registradorGenerico:PC|q[0]'
-Slack : 0.328
+Slack : 0.202
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -236.580
+TNS   : -248.062
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'registradorGenerico:PC|q[0]'
-Slack : 0.186
+Slack : 0.040
 TNS   : 0.000
 
 ------------------------------------------------------------

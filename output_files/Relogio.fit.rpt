@@ -1,5 +1,5 @@
 Fitter report for Relogio
-Tue Oct 15 16:01:25 2019
+Tue Oct 15 17:27:47 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -68,17 +68,17 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Tue Oct 15 16:01:25 2019           ;
+; Fitter Status                      ; Successful - Tue Oct 15 17:27:47 2019           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; Relogio                                         ;
 ; Top-level Entity Name              ; relogio                                         ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE115F29C7                                   ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 445 / 114,480 ( < 1 % )                         ;
-;     Total combinational functions  ; 443 / 114,480 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 203 / 114,480 ( < 1 % )                         ;
-; Total registers                    ; 203                                             ;
+; Total logic elements               ; 481 / 114,480 ( < 1 % )                         ;
+;     Total combinational functions  ; 470 / 114,480 ( < 1 % )                         ;
+;     Dedicated logic registers      ; 227 / 114,480 ( < 1 % )                         ;
+; Total registers                    ; 227                                             ;
 ; Total pins                         ; 112 / 529 ( 21 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                           ;
@@ -160,9 +160,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.7%      ;
-;     Processor 3            ;   0.5%      ;
-;     Processor 4            ;   0.5%      ;
+;     Processor 2            ;   0.8%      ;
+;     Processor 3            ;   0.6%      ;
+;     Processor 4            ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -182,8 +182,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 880 ) ; 0.00 % ( 0 / 880 )         ; 0.00 % ( 0 / 880 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 880 ) ; 0.00 % ( 0 / 880 )         ; 0.00 % ( 0 / 880 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 931 ) ; 0.00 % ( 0 / 931 )         ; 0.00 % ( 0 / 931 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 931 ) ; 0.00 % ( 0 / 931 )         ; 0.00 % ( 0 / 931 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -206,7 +206,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 872 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 923 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 8 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -222,26 +222,26 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 445 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 242                     ;
-;     -- Register only                        ; 2                       ;
-;     -- Combinational with a register        ; 201                     ;
+; Total logic elements                        ; 481 / 114,480 ( < 1 % ) ;
+;     -- Combinational with no register       ; 254                     ;
+;     -- Register only                        ; 11                      ;
+;     -- Combinational with a register        ; 216                     ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 147                     ;
-;     -- 3 input functions                    ; 61                      ;
-;     -- <=2 input functions                  ; 235                     ;
-;     -- Register only                        ; 2                       ;
+;     -- 4 input functions                    ; 183                     ;
+;     -- 3 input functions                    ; 58                      ;
+;     -- <=2 input functions                  ; 229                     ;
+;     -- Register only                        ; 11                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 265                     ;
+;     -- normal mode                          ; 292                     ;
 ;     -- arithmetic mode                      ; 178                     ;
 ;                                             ;                         ;
-; Total registers*                            ; 203 / 117,053 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 203 / 114,480 ( < 1 % ) ;
+; Total registers*                            ; 227 / 117,053 ( < 1 % ) ;
+;     -- Dedicated logic registers            ; 227 / 114,480 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 36 / 7,155 ( < 1 % )    ;
+; Total LABs:  partially or completely used   ; 37 / 7,155 ( < 1 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 112 / 529 ( 21 % )      ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
@@ -259,12 +259,12 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0.3% / 0.3% / 0.4%      ;
-; Peak interconnect usage (total/H/V)         ; 5.8% / 4.8% / 7.1%      ;
-; Maximum fan-out                             ; 195                     ;
+; Average interconnect usage (total/H/V)      ; 0.4% / 0.3% / 0.5%      ;
+; Peak interconnect usage (total/H/V)         ; 7.8% / 7.0% / 9.1%      ;
+; Maximum fan-out                             ; 219                     ;
 ; Highest non-global fan-out                  ; 18                      ;
-; Total fan-out                               ; 1828                    ;
-; Average fan-out                             ; 2.07                    ;
+; Total fan-out                               ; 2041                    ;
+; Average fan-out                             ; 2.17                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -277,26 +277,26 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 445 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 242                    ; 0                              ;
-;     -- Register only                        ; 2                      ; 0                              ;
-;     -- Combinational with a register        ; 201                    ; 0                              ;
+; Total logic elements                        ; 481 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 254                    ; 0                              ;
+;     -- Register only                        ; 11                     ; 0                              ;
+;     -- Combinational with a register        ; 216                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 147                    ; 0                              ;
-;     -- 3 input functions                    ; 61                     ; 0                              ;
-;     -- <=2 input functions                  ; 235                    ; 0                              ;
-;     -- Register only                        ; 2                      ; 0                              ;
+;     -- 4 input functions                    ; 183                    ; 0                              ;
+;     -- 3 input functions                    ; 58                     ; 0                              ;
+;     -- <=2 input functions                  ; 229                    ; 0                              ;
+;     -- Register only                        ; 11                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 265                    ; 0                              ;
+;     -- normal mode                          ; 292                    ; 0                              ;
 ;     -- arithmetic mode                      ; 178                    ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total registers                             ; 203                    ; 0                              ;
-;     -- Dedicated logic registers            ; 203 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 227                    ; 0                              ;
+;     -- Dedicated logic registers            ; 227 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 36 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 37 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 112                    ; 0                              ;
@@ -312,8 +312,8 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 1824                   ; 4                              ;
-;     -- Registered Connections               ; 454                    ; 0                              ;
+;     -- Total Connections                    ; 2037                   ; 4                              ;
+;     -- Registered Connections               ; 496                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 0                      ; 0                              ;
@@ -368,13 +368,13 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; SW[7]          ; AB26  ; 5        ; 115          ; 15           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; SW[8]          ; AC25  ; 5        ; 115          ; 4            ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; SW[9]          ; AB25  ; 5        ; 115          ; 16           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; reset          ; AB8   ; 3        ; 11           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; sw_controll[0] ; C21   ; 7        ; 91           ; 73           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; sw_controll[1] ; F14   ; 8        ; 45           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; sw_controll[2] ; K28   ; 6        ; 115          ; 49           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; reset          ; V6    ; 2        ; 0            ; 16           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; sw_controll[0] ; V25   ; 5        ; 115          ; 23           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; sw_controll[1] ; B17   ; 7        ; 60           ; 73           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; sw_controll[2] ; Y5    ; 2        ; 0            ; 12           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 ; sw_controll[3] ; AB22  ; 4        ; 107          ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; sw_controll[4] ; E8    ; 8        ; 11           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
-; sw_controll[5] ; AF5   ; 3        ; 5            ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; sw_controll[4] ; AF21  ; 4        ; 87           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; sw_controll[5] ; AG3   ; 3        ; 3            ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 +----------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -468,24 +468,25 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 +----------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Dual Purpose and Dedicated Pins                                                                                         ;
-+----------+-----------------------------+--------------------------+-------------------------+---------------------------+
-; Location ; Pin Name                    ; Reserved As              ; User Signal Name        ; Pin Type                  ;
-+----------+-----------------------------+--------------------------+-------------------------+---------------------------+
-; F4       ; DIFFIO_L5n, DATA1, ASDO     ; As input tri-stated      ; ~ALTERA_ASDO_DATA1~     ; Dual Purpose Pin          ;
-; E2       ; DIFFIO_L8p, FLASH_nCE, nCSO ; As input tri-stated      ; ~ALTERA_FLASH_nCE_nCSO~ ; Dual Purpose Pin          ;
-; M6       ; nSTATUS                     ; -                        ; -                       ; Dedicated Programming Pin ;
-; P3       ; DCLK                        ; As output driving ground ; ~ALTERA_DCLK~           ; Dual Purpose Pin          ;
-; N7       ; DATA0                       ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
-; P4       ; nCONFIG                     ; -                        ; -                       ; Dedicated Programming Pin ;
-; R8       ; nCE                         ; -                        ; -                       ; Dedicated Programming Pin ;
-; P24      ; CONF_DONE                   ; -                        ; -                       ; Dedicated Programming Pin ;
-; N22      ; MSEL0                       ; -                        ; -                       ; Dedicated Programming Pin ;
-; P23      ; MSEL1                       ; -                        ; -                       ; Dedicated Programming Pin ;
-; M22      ; MSEL2                       ; -                        ; -                       ; Dedicated Programming Pin ;
-; P22      ; MSEL3                       ; -                        ; -                       ; Dedicated Programming Pin ;
-+----------+-----------------------------+--------------------------+-------------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Dual Purpose and Dedicated Pins                                                                                                    ;
++----------+----------------------------------------+--------------------------+-------------------------+---------------------------+
+; Location ; Pin Name                               ; Reserved As              ; User Signal Name        ; Pin Type                  ;
++----------+----------------------------------------+--------------------------+-------------------------+---------------------------+
+; F4       ; DIFFIO_L5n, DATA1, ASDO                ; As input tri-stated      ; ~ALTERA_ASDO_DATA1~     ; Dual Purpose Pin          ;
+; E2       ; DIFFIO_L8p, FLASH_nCE, nCSO            ; As input tri-stated      ; ~ALTERA_FLASH_nCE_nCSO~ ; Dual Purpose Pin          ;
+; M6       ; nSTATUS                                ; -                        ; -                       ; Dedicated Programming Pin ;
+; P3       ; DCLK                                   ; As output driving ground ; ~ALTERA_DCLK~           ; Dual Purpose Pin          ;
+; N7       ; DATA0                                  ; As input tri-stated      ; ~ALTERA_DATA0~          ; Dual Purpose Pin          ;
+; P4       ; nCONFIG                                ; -                        ; -                       ; Dedicated Programming Pin ;
+; R8       ; nCE                                    ; -                        ; -                       ; Dedicated Programming Pin ;
+; P24      ; CONF_DONE                              ; -                        ; -                       ; Dedicated Programming Pin ;
+; N22      ; MSEL0                                  ; -                        ; -                       ; Dedicated Programming Pin ;
+; P23      ; MSEL1                                  ; -                        ; -                       ; Dedicated Programming Pin ;
+; M22      ; MSEL2                                  ; -                        ; -                       ; Dedicated Programming Pin ;
+; P22      ; MSEL3                                  ; -                        ; -                       ; Dedicated Programming Pin ;
+; B17      ; DIFFIO_T35p, PADD12, DQS4T/CQ5T,DPCLK9 ; Use as regular IO        ; sw_controll[1]          ; Dual Purpose Pin          ;
++----------+----------------------------------------+--------------------------+-------------------------+---------------------------+
 
 
 +------------------------------------------------------------+
@@ -494,13 +495,13 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
 ; 1        ; 4 / 56 ( 7 % )   ; 2.5V          ; --           ;
-; 2        ; 1 / 63 ( 2 % )   ; 3.3V          ; --           ;
-; 3        ; 3 / 73 ( 4 % )   ; 3.3V          ; --           ;
-; 4        ; 33 / 71 ( 46 % ) ; 3.3V          ; --           ;
-; 5        ; 34 / 65 ( 52 % ) ; 2.5V          ; --           ;
-; 6        ; 9 / 58 ( 16 % )  ; 2.5V          ; --           ;
+; 2        ; 3 / 63 ( 5 % )   ; 2.5V          ; --           ;
+; 3        ; 2 / 73 ( 3 % )   ; 3.3V          ; --           ;
+; 4        ; 34 / 71 ( 48 % ) ; 3.3V          ; --           ;
+; 5        ; 35 / 65 ( 54 % ) ; 2.5V          ; --           ;
+; 6        ; 8 / 58 ( 14 % )  ; 2.5V          ; --           ;
 ; 7        ; 30 / 72 ( 42 % ) ; 2.5V          ; --           ;
-; 8        ; 2 / 71 ( 3 % )   ; 2.5V          ; --           ;
+; 8        ; 0 / 71 ( 0 % )   ; 2.5V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -535,7 +536,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; A25      ; 405        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A26      ; 404        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A27      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; AA1      ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; AA1      ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AA2      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA3      ; 102        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AA4      ; 101        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -570,7 +571,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; AB5      ; 127        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB6      ; 126        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AB7      ; 152        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AB8      ; 148        ; 3        ; reset                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AB8      ; 148        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB9      ; 147        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB10     ; 173        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AB11     ; 164        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -679,7 +680,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; AF2      ; 123        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AF3      ; 138        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF4      ; 131        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AF5      ; 136        ; 3        ; sw_controll[5]                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF5      ; 136        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF6      ; 139        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF7      ; 159        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF8      ; 162        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -695,7 +696,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; AF18     ; 226        ; 4        ; HEX5[5]                                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AF19     ; 232        ; 4        ; HEX4[5]                                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AF20     ; 236        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AF21     ; 239        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AF21     ; 239        ; 4        ; sw_controll[4]                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF22     ; 252        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF23     ; 262        ; 4        ; HEX3[5]                                                   ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AF24     ; 233        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -703,9 +704,9 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; AF26     ; 244        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF27     ; 277        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AF28     ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AG1      ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; AG1      ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AG2      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; AG3      ; 133        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; AG3      ; 133        ; 3        ; sw_controll[5]                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AG4      ; 141        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG5      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG6      ; 145        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -773,7 +774,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; B14      ; 473        ; 8        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; B15      ; 471        ; 7        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; B16      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; B17      ; 463        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; B17      ; 463        ; 7        ; sw_controll[1]                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B18      ; 443        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B19      ; 441        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -805,7 +806,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; C18      ; 429        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C19      ; 435        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C20      ; 431        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C21      ; 422        ; 7        ; sw_controll[0]                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C21      ; 422        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C22      ; 418        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C23      ; 415        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C24      ; 416        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -848,7 +849,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; E5       ; 542        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E6       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; E7       ; 523        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; E8       ; 526        ; 8        ; sw_controll[4]                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; E8       ; 526        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E9       ;            ; 8        ; VCCIO8                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; E10      ; 516        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E11      ; 499        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -882,7 +883,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; F11      ; 500        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F12      ; 498        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F13      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; F14      ; 485        ; 8        ; sw_controll[1]                                            ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; F14      ; 485        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F15      ; 466        ; 7        ; LEDR[14]                                                  ; output ; 2.5 V        ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; F16      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F17      ; 455        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -1008,7 +1009,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; K25      ; 371        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K26      ; 370        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K27      ; 362        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; K28      ; 361        ; 6        ; sw_controll[2]                                            ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K28      ; 361        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L1       ; 49         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L2       ; 48         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L3       ; 32         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1149,11 +1150,11 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; R26      ; 326        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R27      ; 329        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R28      ; 328        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; T1       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; T1       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; T2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T3       ; 76         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T4       ; 75         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; T5       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; T5       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; T6       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T7       ; 78         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; T8       ; 100        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -1210,7 +1211,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; V3       ; 82         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V4       ; 81         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V5       ; 108        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V6       ; 107        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; V6       ; 107        ; 2        ; reset                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V7       ; 110        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V8       ; 109        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V9       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -1229,7 +1230,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; V22      ; 312        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V23      ; 309        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V24      ; 308        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V25      ; 307        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; V25      ; 307        ; 5        ; sw_controll[0]                                            ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V26      ; 306        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V27      ; 304        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V28      ; 303        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1237,7 +1238,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; W2       ; 87         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W3       ; 112        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W4       ; 111        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; W5       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; W5       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; W6       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W7       ; 115        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W8       ; 116        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1265,7 +1266,7 @@ The pin-out file can be found in /home/bruno/Documents/Insper/DesComp/Relog-io/o
 ; Y2       ; 65         ; 2        ; CLOCK_50                                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; Y3       ; 92         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y4       ; 91         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; Y5       ; 114        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
+; Y5       ; 114        ; 2        ; sw_controll[2]                                            ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; Y6       ; 113        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y7       ; 117        ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; Y8       ;            ; --       ; VCCA1                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1320,9 +1321,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node         ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                         ; Entity Name         ; Library Name ;
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------+---------------------+--------------+
-; |relogio                           ; 445 (2)     ; 203 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 112  ; 0            ; 242 (2)      ; 2 (0)             ; 201 (0)          ; |relogio                                    ; relogio             ; work         ;
-;    |ADDER:ADDER_GENERIC|           ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; |relogio|ADDER:ADDER_GENERIC                ; ADDER               ; work         ;
-;    |IO_T:IO|                       ; 321 (18)    ; 176 (8)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 145 (10)     ; 0 (0)             ; 176 (1)          ; |relogio|IO_T:IO                            ; IO_T                ; work         ;
+; |relogio                           ; 481 (2)     ; 227 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 112  ; 0            ; 254 (2)      ; 11 (0)            ; 216 (0)          ; |relogio                                    ; relogio             ; work         ;
+;    |ADDER:ADDER_GENERIC|           ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 3 (3)            ; |relogio|ADDER:ADDER_GENERIC                ; ADDER               ; work         ;
+;    |IO_T:IO|                       ; 328 (25)    ; 182 (14)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 146 (11)     ; 7 (7)             ; 175 (0)          ; |relogio|IO_T:IO                            ; IO_T                ; work         ;
 ;       |conversorHex7Seg:HEX_7|     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; |relogio|IO_T:IO|conversorHex7Seg:HEX_7     ; conversorHex7Seg    ; work         ;
 ;       |divisorGenerico:TEMPO_SEG1| ; 44 (44)     ; 25 (25)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 25 (25)          ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG1 ; divisorGenerico     ; work         ;
 ;       |divisorGenerico:TEMPO_SEG2| ; 47 (47)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 26 (26)          ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG2 ; divisorGenerico     ; work         ;
@@ -1331,10 +1332,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;       |divisorGenerico:TEMPO_SEG5| ; 40 (40)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 22 (22)          ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG5 ; divisorGenerico     ; work         ;
 ;       |divisorGenerico:TEMPO_SEG6| ; 39 (39)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 21 (21)          ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG6 ; divisorGenerico     ; work         ;
 ;       |divisorGenerico:TEMPO_SEG|  ; 43 (43)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (19)      ; 0 (0)             ; 24 (24)          ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG  ; divisorGenerico     ; work         ;
-;    |SUBADDER:SUBADDER|             ; 32 (32)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 3 (3)            ; |relogio|SUBADDER:SUBADDER                  ; SUBADDER            ; work         ;
-;    |bancoRegistradores:BR|         ; 18 (18)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 18 (18)          ; |relogio|bancoRegistradores:BR              ; bancoRegistradores  ; work         ;
-;    |decoder:DECODER|               ; 43 (43)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 39 (39)      ; 0 (0)             ; 4 (4)            ; |relogio|decoder:DECODER                    ; decoder             ; work         ;
-;    |memoria:ROM|                   ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; |relogio|memoria:ROM                        ; memoria             ; work         ;
+;    |SUBADDER:SUBADDER|             ; 42 (42)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (36)      ; 0 (0)             ; 6 (6)            ; |relogio|SUBADDER:SUBADDER                  ; SUBADDER            ; work         ;
+;    |bancoRegistradores:BR|         ; 48 (48)     ; 36 (36)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 2 (2)             ; 34 (34)          ; |relogio|bancoRegistradores:BR              ; bancoRegistradores  ; work         ;
+;    |decoder:DECODER|               ; 41 (41)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (35)      ; 0 (0)             ; 6 (6)            ; |relogio|decoder:DECODER                    ; decoder             ; work         ;
+;    |memoria:ROM|                   ; 15 (15)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; |relogio|memoria:ROM                        ; memoria             ; work         ;
 ;    |registradorGenerico:PC|        ; 11 (11)     ; 9 (9)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 2 (2)             ; 7 (7)            ; |relogio|registradorGenerico:PC             ; registradorGenerico ; work         ;
 +------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1441,22 +1442,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX7[4]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; HEX7[5]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; HEX7[6]        ; Output   ; --            ; --            ; --                    ; --  ; --   ;
+; sw_controll[0] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[0]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SW[1]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; SW[3]          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SW[2]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; sw_controll[0] ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[3]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[2]          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[4]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SW[6]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; SW[5]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; KEY[0]         ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; CLOCK_50       ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; SW[17]         ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SW[11]         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; SW[10]         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; SW[9]          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; SW[8]          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; SW[7]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[8]          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[9]          ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[10]         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[11]         ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +----------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1479,6 +1480,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[14]                               ;                   ;         ;
 ; SW[15]                               ;                   ;         ;
 ; SW[16]                               ;                   ;         ;
+; sw_controll[0]                       ;                   ;         ;
+;      - IO_T:IO|HEX6[0]~0             ; 1                 ; 6       ;
 ; SW[0]                                ;                   ;         ;
 ;      - IO_T:IO|Mux0~0                ; 0                 ; 6       ;
 ;      - IO_T:IO|Mux0~1                ; 0                 ; 6       ;
@@ -1488,58 +1491,59 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - IO_T:IO|Mux0~2                ; 0                 ; 6       ;
 ;      - IO_T:IO|Mux0~3                ; 0                 ; 6       ;
 ; SW[3]                                ;                   ;         ;
-;      - IO_T:IO|Mux0~1                ; 1                 ; 6       ;
+;      - IO_T:IO|Mux0~1                ; 0                 ; 6       ;
 ; SW[2]                                ;                   ;         ;
-;      - IO_T:IO|Mux0~4                ; 0                 ; 6       ;
-; sw_controll[0]                       ;                   ;         ;
-;      - IO_T:IO|HEX6[0]~4             ; 1                 ; 6       ;
+;      - IO_T:IO|Mux0~4                ; 1                 ; 6       ;
 ; SW[4]                                ;                   ;         ;
-;      - decoder:DECODER|in_bank[1]~13 ; 0                 ; 6       ;
+;      - decoder:DECODER|in_bank[1]~8  ; 0                 ; 6       ;
 ; SW[6]                                ;                   ;         ;
-;      - decoder:DECODER|in_bank[3]~16 ; 0                 ; 6       ;
+;      - decoder:DECODER|in_bank[3]~12 ; 0                 ; 6       ;
 ; SW[5]                                ;                   ;         ;
-;      - decoder:DECODER|in_bank[2]~22 ; 0                 ; 6       ;
+;      - decoder:DECODER|in_bank[2]~18 ; 0                 ; 6       ;
 ; KEY[0]                               ;                   ;         ;
 ;      - CLK                           ; 1                 ; 6       ;
 ; CLOCK_50                             ;                   ;         ;
 ; SW[17]                               ;                   ;         ;
 ;      - CLK                           ; 1                 ; 6       ;
-; SW[11]                               ;                   ;         ;
-;      - decoder:DECODER|in_bank[8]~25 ; 0                 ; 6       ;
+; SW[7]                                ;                   ;         ;
+;      - decoder:DECODER|in_bank[4]~21 ; 0                 ; 6       ;
+; SW[8]                                ;                   ;         ;
+;      - decoder:DECODER|in_bank[5]~23 ; 1                 ; 6       ;
+; SW[9]                                ;                   ;         ;
+;      - decoder:DECODER|in_bank[6]~25 ; 0                 ; 6       ;
 ; SW[10]                               ;                   ;         ;
 ;      - decoder:DECODER|in_bank[7]~27 ; 0                 ; 6       ;
-; SW[9]                                ;                   ;         ;
-;      - decoder:DECODER|in_bank[6]~29 ; 1                 ; 6       ;
-; SW[8]                                ;                   ;         ;
-;      - decoder:DECODER|in_bank[5]~31 ; 1                 ; 6       ;
-; SW[7]                                ;                   ;         ;
-;      - decoder:DECODER|in_bank[4]~33 ; 0                 ; 6       ;
+; SW[11]                               ;                   ;         ;
+;      - decoder:DECODER|in_bank[8]~29 ; 0                 ; 6       ;
 +--------------------------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                   ;
-+--------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                 ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLK                                  ; LCCOMB_X85_Y60_N24 ; 9       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; CLK                                  ; LCCOMB_X85_Y60_N24 ; 195     ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
-; IO_T:IO|Equal6~1                     ; LCCOMB_X84_Y60_N8  ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; bancoRegistradores:BR|registrador~40 ; LCCOMB_X91_Y60_N18 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; bancoRegistradores:BR|registrador~41 ; LCCOMB_X90_Y60_N16 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decoder:DECODER|Equal5~0             ; LCCOMB_X91_Y60_N14 ; 10      ; Latch enable ; yes    ; Global Clock         ; GCLK8            ; --                        ;
-; decoder:DECODER|Mux0~0               ; LCCOMB_X86_Y60_N12 ; 9       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-+--------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                    ;
++--------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                 ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; CLK                                  ; LCCOMB_X111_Y22_N20 ; 9       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; CLK                                  ; LCCOMB_X111_Y22_N20 ; 219     ; Clock        ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; IO_T:IO|Equal6~6                     ; LCCOMB_X113_Y23_N28 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; IO_T:IO|Equal6~7                     ; LCCOMB_X113_Y23_N10 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; bancoRegistradores:BR|registrador~67 ; LCCOMB_X106_Y23_N12 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; bancoRegistradores:BR|registrador~68 ; LCCOMB_X106_Y23_N20 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; bancoRegistradores:BR|registrador~70 ; LCCOMB_X105_Y23_N22 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; bancoRegistradores:BR|registrador~71 ; LCCOMB_X106_Y23_N0  ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decoder:DECODER|Equal5~1             ; LCCOMB_X110_Y23_N4  ; 10      ; Latch enable ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; decoder:DECODER|Mux0~0               ; LCCOMB_X110_Y22_N28 ; 9       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
++--------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                          ;
-+--------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                     ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLK                      ; LCCOMB_X85_Y60_N24 ; 195     ; 13                                   ; Global Clock         ; GCLK10           ; --                        ;
-; decoder:DECODER|Equal5~0 ; LCCOMB_X91_Y60_N14 ; 10      ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
-+--------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                           ;
++--------------------------+---------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                     ; Location            ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------------+---------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; CLK                      ; LCCOMB_X111_Y22_N20 ; 219     ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
+; decoder:DECODER|Equal5~1 ; LCCOMB_X110_Y23_N4  ; 10      ; 0                                    ; Global Clock         ; GCLK6            ; --                        ;
++--------------------------+---------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------+
@@ -1547,68 +1551,67 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 520 / 342,891 ( < 1 % ) ;
+; Block interconnects   ; 609 / 342,891 ( < 1 % ) ;
 ; C16 interconnects     ; 114 / 10,120 ( 1 % )    ;
-; C4 interconnects      ; 559 / 209,544 ( < 1 % ) ;
-; Direct links          ; 147 / 342,891 ( < 1 % ) ;
+; C4 interconnects      ; 657 / 209,544 ( < 1 % ) ;
+; Direct links          ; 164 / 342,891 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )         ;
-; Local interconnects   ; 300 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 91 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 440 / 289,782 ( < 1 % ) ;
+; Local interconnects   ; 285 / 119,088 ( < 1 % ) ;
+; R24 interconnects     ; 82 / 9,963 ( < 1 % )    ;
+; R4 interconnects      ; 573 / 289,782 ( < 1 % ) ;
 +-----------------------+-------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.36) ; Number of LABs  (Total = 36) ;
+; Number of Logic Elements  (Average = 13.00) ; Number of LABs  (Total = 37) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 4                            ;
+; 1                                           ; 1                            ;
 ; 2                                           ; 1                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 2                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 0                            ;
 ; 7                                           ; 1                            ;
-; 8                                           ; 2                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 0                            ;
 ; 11                                          ; 1                            ;
 ; 12                                          ; 0                            ;
-; 13                                          ; 0                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 0                            ;
-; 15                                          ; 1                            ;
-; 16                                          ; 23                           ;
+; 15                                          ; 2                            ;
+; 16                                          ; 24                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.97) ; Number of LABs  (Total = 36) ;
+; LAB-wide Signals  (Average = 1.08) ; Number of LABs  (Total = 37) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 28                           ;
+; 1 Clock                            ; 33                           ;
 ; 1 Clock enable                     ; 3                            ;
 ; 1 Sync. load                       ; 1                            ;
-; 2 Clock enables                    ; 2                            ;
-; 2 Clocks                           ; 1                            ;
+; 2 Clock enables                    ; 3                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 18.00) ; Number of LABs  (Total = 36) ;
+; Number of Signals Sourced  (Average = 19.14) ; Number of LABs  (Total = 37) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 4                            ;
+; 1                                            ; 1                            ;
 ; 2                                            ; 1                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 0                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 2                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
 ; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 2                            ;
@@ -1617,82 +1620,94 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 14                                           ; 1                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 3                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 2                            ;
 ; 19                                           ; 0                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 5                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 1                            ;
+; 20                                           ; 0                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 3                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 5                            ;
 ; 25                                           ; 5                            ;
-; 26                                           ; 5                            ;
+; 26                                           ; 4                            ;
 ; 27                                           ; 2                            ;
-; 28                                           ; 1                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 1                            ;
+; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.44) ; Number of LABs  (Total = 36) ;
+; Number of Signals Sourced Out  (Average = 8.89) ; Number of LABs  (Total = 37) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 5                            ;
-; 2                                               ; 2                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 4                            ;
-; 5                                               ; 3                            ;
-; 6                                               ; 1                            ;
-; 7                                               ; 0                            ;
-; 8                                               ; 4                            ;
-; 9                                               ; 3                            ;
-; 10                                              ; 4                            ;
-; 11                                              ; 2                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 5                            ;
+; 4                                               ; 2                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 5                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 3                            ;
+; 9                                               ; 0                            ;
+; 10                                              ; 5                            ;
+; 11                                              ; 0                            ;
 ; 12                                              ; 2                            ;
 ; 13                                              ; 2                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 2                            ;
-; 16                                              ; 0                            ;
-; 17                                              ; 0                            ;
-; 18                                              ; 1                            ;
+; 14                                              ; 2                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 1                            ;
+; 17                                              ; 2                            ;
+; 18                                              ; 0                            ;
+; 19                                              ; 0                            ;
+; 20                                              ; 0                            ;
+; 21                                              ; 1                            ;
+; 22                                              ; 0                            ;
+; 23                                              ; 0                            ;
+; 24                                              ; 0                            ;
+; 25                                              ; 0                            ;
+; 26                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 10.97) ; Number of LABs  (Total = 36) ;
+; Number of Distinct Inputs  (Average = 12.49) ; Number of LABs  (Total = 37) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 5                            ;
-; 4                                            ; 4                            ;
-; 5                                            ; 4                            ;
-; 6                                            ; 1                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 3                            ;
+; 6                                            ; 2                            ;
 ; 7                                            ; 1                            ;
 ; 8                                            ; 2                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 1                            ;
+; 9                                            ; 2                            ;
+; 10                                           ; 5                            ;
+; 11                                           ; 0                            ;
 ; 12                                           ; 1                            ;
-; 13                                           ; 1                            ;
+; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 1                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 2                            ;
 ; 18                                           ; 1                            ;
-; 19                                           ; 4                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 1                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 3                            ;
 ; 22                                           ; 2                            ;
 ; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 0                            ;
-; 28                                           ; 1                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 1                            ;
+; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1853,22 +1868,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX7[4]            ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; HEX7[5]            ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; HEX7[6]            ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; sw_controll[0]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[0]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[1]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[3]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[2]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; sw_controll[0]     ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[4]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[6]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[5]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[17]             ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[11]             ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[10]             ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[9]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[8]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[7]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[8]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[9]              ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[10]             ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[11]             ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+-----------+--------------+--------------+
 
 
@@ -1908,87 +1923,104 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                                       ;
-+------------------------------------------+--------------------------------------+-------------------+
-; Source Clock(s)                          ; Destination Clock(s)                 ; Delay Added in ns ;
-+------------------------------------------+--------------------------------------+-------------------+
-; CLOCK_50                                 ; CLOCK_50                             ; 286.3             ;
-; CLOCK_50                                 ; registradorGenerico:PC|q[0]          ; 67.1              ;
-; CLOCK_50                                 ; CLOCK_50,I/O                         ; 65.8              ;
-; CLOCK_50,registradorGenerico:PC|q[0],I/O ; CLOCK_50                             ; 22.6              ;
-; CLOCK_50                                 ; CLOCK_50,registradorGenerico:PC|q[0] ; 12.9              ;
-; CLOCK_50,I/O                             ; CLOCK_50                             ; 8.0               ;
-+------------------------------------------+--------------------------------------+-------------------+
++---------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                           ;
++------------------------------------------+------------------------------------------+-------------------+
+; Source Clock(s)                          ; Destination Clock(s)                     ; Delay Added in ns ;
++------------------------------------------+------------------------------------------+-------------------+
+; CLOCK_50                                 ; CLOCK_50                                 ; 258.2             ;
+; CLOCK_50                                 ; CLOCK_50,I/O                             ; 104.6             ;
+; CLOCK_50                                 ; registradorGenerico:PC|q[0]              ; 61.4              ;
+; CLOCK_50                                 ; CLOCK_50,registradorGenerico:PC|q[0]     ; 54.2              ;
+; CLOCK_50                                 ; CLOCK_50,registradorGenerico:PC|q[0],I/O ; 39.6              ;
+; CLOCK_50,registradorGenerico:PC|q[0],I/O ; CLOCK_50                                 ; 30.9              ;
++------------------------------------------+------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                         ;
-+-------------------------------------------------+-------------------------------------------------+-------------------+
-; Source Register                                 ; Destination Register                            ; Delay Added in ns ;
-+-------------------------------------------------+-------------------------------------------------+-------------------+
-; registradorGenerico:PC|q[0]                     ; IO_T:IO|HEX4[5]                                 ; 8.345             ;
-; registradorGenerico:PC|q[4]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; registradorGenerico:PC|q[5]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; registradorGenerico:PC|q[2]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; registradorGenerico:PC|q[3]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; registradorGenerico:PC|q[6]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; registradorGenerico:PC|q[7]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; registradorGenerico:PC|q[1]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; registradorGenerico:PC|q[8]                     ; registradorGenerico:PC|q[0]                     ; 8.117             ;
-; SUBADDER:SUBADDER|zz                            ; registradorGenerico:PC|q[0]                     ; 3.659             ;
-; bancoRegistradores:BR|registrador~22            ; SUBADDER:SUBADDER|zz                            ; 3.613             ;
-; bancoRegistradores:BR|registrador~13            ; SUBADDER:SUBADDER|zz                            ; 3.613             ;
-; bancoRegistradores:BR|registrador~23            ; SUBADDER:SUBADDER|zz                            ; 3.365             ;
-; bancoRegistradores:BR|registrador~24            ; SUBADDER:SUBADDER|zz                            ; 3.365             ;
-; bancoRegistradores:BR|registrador~15            ; SUBADDER:SUBADDER|zz                            ; 3.365             ;
-; bancoRegistradores:BR|registrador~14            ; SUBADDER:SUBADDER|zz                            ; 3.365             ;
-; SW[7]                                           ; bancoRegistradores:BR|registrador~26            ; 3.354             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[4]              ; bancoRegistradores:BR|registrador~26            ; 3.354             ;
-; SW[8]                                           ; bancoRegistradores:BR|registrador~27            ; 3.334             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[5]              ; bancoRegistradores:BR|registrador~27            ; 3.334             ;
-; SW[9]                                           ; bancoRegistradores:BR|registrador~28            ; 3.294             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[6]              ; bancoRegistradores:BR|registrador~28            ; 3.294             ;
-; bancoRegistradores:BR|registrador~25            ; SUBADDER:SUBADDER|zz                            ; 3.226             ;
-; bancoRegistradores:BR|registrador~16            ; SUBADDER:SUBADDER|zz                            ; 3.226             ;
-; bancoRegistradores:BR|registrador~27            ; SUBADDER:SUBADDER|zz                            ; 3.186             ;
-; bancoRegistradores:BR|registrador~26            ; SUBADDER:SUBADDER|zz                            ; 3.186             ;
-; bancoRegistradores:BR|registrador~17            ; SUBADDER:SUBADDER|zz                            ; 3.186             ;
-; bancoRegistradores:BR|registrador~28            ; SUBADDER:SUBADDER|zz                            ; 3.186             ;
-; bancoRegistradores:BR|registrador~19            ; SUBADDER:SUBADDER|zz                            ; 3.186             ;
-; bancoRegistradores:BR|registrador~18            ; SUBADDER:SUBADDER|zz                            ; 3.186             ;
-; bancoRegistradores:BR|registrador~29            ; SUBADDER:SUBADDER|zz                            ; 3.019             ;
-; bancoRegistradores:BR|registrador~20            ; SUBADDER:SUBADDER|zz                            ; 3.019             ;
-; bancoRegistradores:BR|registrador~30            ; SUBADDER:SUBADDER|RESULT_SIGNAL[4]              ; 2.998             ;
-; bancoRegistradores:BR|registrador~21            ; SUBADDER:SUBADDER|RESULT_SIGNAL[4]              ; 2.998             ;
-; SW[4]                                           ; bancoRegistradores:BR|registrador~23            ; 2.752             ;
-; SW[5]                                           ; bancoRegistradores:BR|registrador~24            ; 2.724             ;
-; SW[6]                                           ; bancoRegistradores:BR|registrador~25            ; 2.530             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[7]              ; bancoRegistradores:BR|registrador~29            ; 2.471             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[8]              ; bancoRegistradores:BR|registrador~30            ; 2.425             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[3]              ; bancoRegistradores:BR|registrador~25            ; 2.216             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[1]              ; bancoRegistradores:BR|registrador~23            ; 2.205             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[0]              ; bancoRegistradores:BR|registrador~22            ; 2.098             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG5|tick         ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG6|tick         ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG4|tick         ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; SW[3]                                           ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG1|tick         ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; SW[1]                                           ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG2|tick         ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; SW[0]                                           ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG3|tick         ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG|tick          ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; SW[2]                                           ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; sw_controll[0]                                  ; bancoRegistradores:BR|registrador~22            ; 1.805             ;
-; SUBADDER:SUBADDER|RESULT_SIGNAL[2]              ; bancoRegistradores:BR|registrador~24            ; 1.748             ;
-; SW[11]                                          ; bancoRegistradores:BR|registrador~30            ; 1.528             ;
-; SW[10]                                          ; bancoRegistradores:BR|registrador~29            ; 1.497             ;
-; IO_T:IO|divisorGenerico:TEMPO_SEG5|contador[20] ; IO_T:IO|divisorGenerico:TEMPO_SEG5|contador[18] ; 0.072             ;
-+-------------------------------------------------+-------------------------------------------------+-------------------+
-Note: This table only shows the top 58 path(s) that have the largest delay added for hold.
++----------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                      ;
++-----------------------------------------+--------------------------------------+-------------------+
+; Source Register                         ; Destination Register                 ; Delay Added in ns ;
++-----------------------------------------+--------------------------------------+-------------------+
+; registradorGenerico:PC|q[0]             ; IO_T:IO|HEX0[3]                      ; 8.725             ;
+; registradorGenerico:PC|q[4]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; registradorGenerico:PC|q[5]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; registradorGenerico:PC|q[2]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; registradorGenerico:PC|q[6]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; registradorGenerico:PC|q[7]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; registradorGenerico:PC|q[3]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; registradorGenerico:PC|q[1]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; registradorGenerico:PC|q[8]             ; IO_T:IO|HEX0[3]                      ; 8.082             ;
+; bancoRegistradores:BR|registrador~23    ; IO_T:IO|HEX0[3]                      ; 4.975             ;
+; bancoRegistradores:BR|registrador~14    ; IO_T:IO|HEX0[3]                      ; 4.975             ;
+; bancoRegistradores:BR|registrador~25    ; IO_T:IO|HEX0[1]                      ; 4.905             ;
+; bancoRegistradores:BR|registrador~16    ; IO_T:IO|HEX0[1]                      ; 4.905             ;
+; bancoRegistradores:BR|registrador~33    ; IO_T:IO|HEX0[5]                      ; 4.864             ;
+; bancoRegistradores:BR|registrador~15    ; IO_T:IO|HEX0[5]                      ; 4.864             ;
+; bancoRegistradores:BR|registrador~31    ; IO_T:IO|HEX0[5]                      ; 4.603             ;
+; bancoRegistradores:BR|registrador~13    ; IO_T:IO|HEX0[5]                      ; 4.603             ;
+; bancoRegistradores:BR|registrador~32    ; IO_T:IO|HEX0[3]                      ; 3.965             ;
+; bancoRegistradores:BR|registrador~41    ; IO_T:IO|HEX0[3]                      ; 3.965             ;
+; bancoRegistradores:BR|registrador~24    ; IO_T:IO|HEX0[5]                      ; 3.903             ;
+; bancoRegistradores:BR|registrador~42    ; IO_T:IO|HEX0[5]                      ; 3.903             ;
+; bancoRegistradores:BR|registrador~34    ; IO_T:IO|HEX0[1]                      ; 3.848             ;
+; bancoRegistradores:BR|registrador~43    ; IO_T:IO|HEX0[1]                      ; 3.848             ;
+; bancoRegistradores:BR|registrador~26    ; bancoRegistradores:BR|registrador~35 ; 3.838             ;
+; bancoRegistradores:BR|registrador~17    ; bancoRegistradores:BR|registrador~35 ; 3.838             ;
+; bancoRegistradores:BR|registrador~30    ; bancoRegistradores:BR|registrador~39 ; 3.821             ;
+; bancoRegistradores:BR|registrador~21    ; bancoRegistradores:BR|registrador~39 ; 3.821             ;
+; bancoRegistradores:BR|registrador~22    ; IO_T:IO|HEX0[5]                      ; 3.755             ;
+; bancoRegistradores:BR|registrador~40    ; IO_T:IO|HEX0[5]                      ; 3.755             ;
+; bancoRegistradores:BR|registrador~28    ; bancoRegistradores:BR|registrador~37 ; 3.501             ;
+; bancoRegistradores:BR|registrador~19    ; bancoRegistradores:BR|registrador~37 ; 3.501             ;
+; bancoRegistradores:BR|registrador~38    ; bancoRegistradores:BR|registrador~39 ; 3.344             ;
+; bancoRegistradores:BR|registrador~20    ; bancoRegistradores:BR|registrador~39 ; 3.344             ;
+; SUBADDER:SUBADDER|zz                    ; registradorGenerico:PC|q[0]          ; 3.330             ;
+; bancoRegistradores:BR|registrador~36    ; bancoRegistradores:BR|registrador~36 ; 3.295             ;
+; bancoRegistradores:BR|registrador~18    ; bancoRegistradores:BR|registrador~36 ; 3.295             ;
+; bancoRegistradores:BR|registrador~35    ; bancoRegistradores:BR|registrador~35 ; 3.110             ;
+; bancoRegistradores:BR|registrador~44    ; bancoRegistradores:BR|registrador~35 ; 3.110             ;
+; SW[4]                                   ; bancoRegistradores:BR|registrador~23 ; 3.001             ;
+; sw_controll[0]                          ; bancoRegistradores:BR|registrador~13 ; 2.997             ;
+; bancoRegistradores:BR|registrador~39    ; bancoRegistradores:BR|registrador~39 ; 2.982             ;
+; bancoRegistradores:BR|registrador~48    ; bancoRegistradores:BR|registrador~39 ; 2.982             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[8]      ; bancoRegistradores:BR|registrador~39 ; 2.969             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[6]      ; bancoRegistradores:BR|registrador~37 ; 2.940             ;
+; bancoRegistradores:BR|registrador~37    ; bancoRegistradores:BR|registrador~37 ; 2.798             ;
+; bancoRegistradores:BR|registrador~46    ; bancoRegistradores:BR|registrador~37 ; 2.798             ;
+; SW[6]                                   ; bancoRegistradores:BR|registrador~25 ; 2.733             ;
+; bancoRegistradores:BR|registrador~27    ; bancoRegistradores:BR|registrador~36 ; 2.650             ;
+; bancoRegistradores:BR|registrador~45    ; bancoRegistradores:BR|registrador~36 ; 2.650             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[4]      ; bancoRegistradores:BR|registrador~35 ; 2.647             ;
+; bancoRegistradores:BR|registrador~29    ; bancoRegistradores:BR|registrador~39 ; 2.644             ;
+; bancoRegistradores:BR|registrador~47    ; bancoRegistradores:BR|registrador~39 ; 2.644             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[1]      ; bancoRegistradores:BR|registrador~23 ; 2.190             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[3]      ; bancoRegistradores:BR|registrador~25 ; 2.185             ;
+; SW[8]                                   ; bancoRegistradores:BR|registrador~36 ; 2.177             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[5]      ; bancoRegistradores:BR|registrador~36 ; 2.177             ;
+; IO_T:IO|divisorGenerico:TEMPO_SEG5|tick ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; IO_T:IO|divisorGenerico:TEMPO_SEG6|tick ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; IO_T:IO|divisorGenerico:TEMPO_SEG4|tick ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; SW[3]                                   ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; IO_T:IO|divisorGenerico:TEMPO_SEG1|tick ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; SW[1]                                   ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; IO_T:IO|divisorGenerico:TEMPO_SEG2|tick ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; SW[0]                                   ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; IO_T:IO|divisorGenerico:TEMPO_SEG3|tick ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; IO_T:IO|divisorGenerico:TEMPO_SEG|tick  ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; SW[2]                                   ; bancoRegistradores:BR|registrador~13 ; 2.161             ;
+; SW[5]                                   ; bancoRegistradores:BR|registrador~33 ; 2.152             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[2]      ; bancoRegistradores:BR|registrador~33 ; 2.152             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[7]      ; bancoRegistradores:BR|registrador~38 ; 2.136             ;
+; SW[10]                                  ; bancoRegistradores:BR|registrador~38 ; 2.136             ;
+; SW[11]                                  ; bancoRegistradores:BR|registrador~39 ; 2.134             ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[0]      ; bancoRegistradores:BR|registrador~13 ; 2.099             ;
+; SW[9]                                   ; bancoRegistradores:BR|registrador~37 ; 2.095             ;
+; SW[7]                                   ; bancoRegistradores:BR|registrador~35 ; 2.045             ;
++-----------------------------------------+--------------------------------------+-------------------+
+Note: This table only shows the top 75 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2036,15 +2068,15 @@ Info (176353): Automatically promoted node CLK  File: /home/bruno/Documents/Insp
         Info (176357): Destination node registradorGenerico:PC|q[6] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
         Info (176357): Destination node registradorGenerico:PC|q[7] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
         Info (176357): Destination node registradorGenerico:PC|q[8] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
-Info (176353): Automatically promoted node decoder:DECODER|Equal5~0  File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 95
+Info (176353): Automatically promoted node decoder:DECODER|Equal5~1  File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 95
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node decoder:DECODER|in_bank[0]~20 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
-        Info (176357): Destination node decoder:DECODER|in_bank[8]~26 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
-        Info (176357): Destination node decoder:DECODER|in_bank[7]~28 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
-        Info (176357): Destination node decoder:DECODER|in_bank[6]~29 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
-        Info (176357): Destination node decoder:DECODER|in_bank[5]~31 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
-        Info (176357): Destination node decoder:DECODER|in_bank[4]~33 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
+        Info (176357): Destination node decoder:DECODER|in_bank[2]~18 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
+        Info (176357): Destination node decoder:DECODER|in_bank[4]~21 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
+        Info (176357): Destination node decoder:DECODER|in_bank[5]~23 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
+        Info (176357): Destination node decoder:DECODER|in_bank[6]~25 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
+        Info (176357): Destination node decoder:DECODER|in_bank[7]~27 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
+        Info (176357): Destination node decoder:DECODER|in_bank[8]~29 File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 28
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -2069,14 +2101,14 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X81_Y49 to location X91_Y60
+    Info (170196): Router estimated peak interconnect usage is 7% of the available device resources in the region that extends from location X104_Y12 to location X115_Y23
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.39 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
+Info (11888): Total time spent on timing analysis during the Fitter is 0.58 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2084,16 +2116,16 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 4 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin reset uses I/O standard 2.5 V at AB8 File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 17
     Info (169178): Pin sw_controll[3] uses I/O standard 2.5 V at AB22 File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
-    Info (169178): Pin sw_controll[5] uses I/O standard 2.5 V at AF5 File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
+    Info (169178): Pin sw_controll[4] uses I/O standard 2.5 V at AF21 File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
+    Info (169178): Pin sw_controll[5] uses I/O standard 2.5 V at AG3 File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 21
 Info (144001): Generated suppressed messages file /home/bruno/Documents/Insper/DesComp/Relog-io/output_files/Relogio.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 1712 megabytes
-    Info: Processing ended: Tue Oct 15 16:01:25 2019
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Peak virtual memory: 1699 megabytes
+    Info: Processing ended: Tue Oct 15 17:27:47 2019
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:33
 
 
 +----------------------------+

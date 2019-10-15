@@ -148,7 +148,7 @@ ARCHITECTURE arch OF relogio is
 	
 	 LEDG(7) <= flag_z;
 	
-	-- LEDR(4 downto 0) <= out_pc(4 downto 0);
+	  LEDR(11 downto 9) <= io_address;
 	--LEDR(4 downto 0) <= imediate(4 downto 0);
 	
 		LEDG(2 downto 0) <= op_ula;
