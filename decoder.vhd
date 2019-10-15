@@ -15,6 +15,8 @@ entity decoder is
 
     PORT(
 		  flag_z, CLK : IN STD_LOGIC;
+		  
+		  enable_sub: OUT STD_LOGIC;
 		  out_ROM : IN std_logic_vector(15 DOWNTO 0);
 
 		  out_addergen,out_io,out_bank,out_subadder: IN std_logic_vector(8 DOWNTO 0);
@@ -67,16 +69,20 @@ begin
 	enable_io <= '1' when "000",
 				'0' when others;
 				
+	with op_ula select		
+	enable_sub <= '1' when "001",
+				'0' when others;
+				
 		
 
 
 						
-	habilita_escrita <= '1' when (op_ula = "100" or op_ula =  "011" or (op_ula = "001" and flag_z = '1') or (op_ula = "000" and mode='0')) else '0';
+	habilita_escrita <= '1' when (op_ula = "100" or op_ula =  "011" or op_ula = "001" or (op_ula = "000" and mode='0')) else '0';
 				
 
 
 	
-	imediate <= out_ROM(14 downto 6) when (op_ula = "100" or op_ula = "001" or (op_ula = "001" and flag_z = '1')) else 
+	imediate <= out_ROM(14 downto 6) when (op_ula = "100" or op_ula = "001") else 
 					out_ROM(11 downto 3) when (op_ula = "101" or op_ula = "010") else					
 					"000000000";
 	
@@ -89,7 +95,7 @@ begin
 	in_bank <= out_io when (op_ula = "000" and mode='0') else
 				  out_addergen when op_ula = "100" else
 				  out_ROM(14 downto 6) when op_ula = "011" else
-				  out_subadder when (op_ula = "001" and flag_z = '1') else
+				  out_subadder when op_ula = "001" else
 				  "000000000";
 	
 	

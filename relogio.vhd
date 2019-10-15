@@ -45,11 +45,13 @@ ARCHITECTURE arch OF relogio is
 	 out_io, in_io,
 	 out_subadder
 	 : std_logic_vector(8 DOWNTO 0);
-    SIGNAL sel_pc, sel_ula, enable_buffer, mode, flag_z, reset_reg, carry, enable_pc, enable_io, saida_clk, habilita_escrita: std_logic;
+    SIGNAL sel_pc, sel_ula, enable_buffer, mode, reset_reg, carry, enable_pc, enable_io, saida_clk, habilita_escrita: std_logic;
+	 SIGNAL flag_z: std_logic := '0';
     SIGNAL op_ula, io_address, reg_address: std_logic_vector(2 DOWNTO 0);
 	 SIGNAL imediate: std_logic_vector(8 DOWNTO 0); --for debunggin only 
 	 SIGNAL display_7seg: std_logic_vector((7*4)-1 downto 0);
 	 SIGNAL CLK : std_logic; 
+	 SIGNAL enable_sub  : std_logic;
 	 SIGNAL OP_ULAEZFLAG: std_logic_vector(3 DOWNTO 0);
     begin
 	 
@@ -85,7 +87,8 @@ ARCHITECTURE arch OF relogio is
 		flag_z => flag_z,
 		enable_pc => enable_pc, enable_io => enable_io, habilita_escrita => habilita_escrita,
 		op_ula => op_ula, io_address => io_address, reg_address => reg_address,
-		imediate => imediate
+		imediate => imediate,
+		enable_sub => enable_sub
     );
 	
 	IO :ENTITY work.IO_T PORT MAP(clk => clk, 
@@ -119,7 +122,7 @@ ARCHITECTURE arch OF relogio is
 	ADDER_1 : ENTITY work.ADDER GENERIC MAP (n => 9) PORT MAP (A => "000000001", B => out_pc, sum => out_adder, carry => carry); --define generic default for data n & larguraDados
 	ADDER_GENERIC : ENTITY work.ADDER GENERIC MAP (n => 9) PORT MAP (A => imediate, B => out_bank, sum => out_addergen, carry => carry); --define generic default for data n & larguraDados
 	
-	SUBADDER: ENTITY work.SUBADDER GENERIC MAP (n => 9) PORT MAP (A => out_bank, B => imediate, sum => out_subadder, zf => flag_z); --define generic default for data n & larguraDados
+	SUBADDER: ENTITY work.SUBADDER GENERIC MAP (DATA_WIDTH => 9) PORT MAP (A => out_bank, B => imediate, result => out_subadder, zf => flag_z, enable_sub => enable_sub); --define generic default for data n & larguraDados
 	 
 	 --- ====================================== "BANCO" DE REGISTRADORES =======================================
 	
@@ -141,9 +144,9 @@ ARCHITECTURE arch OF relogio is
 
 	
 	--LEDG(4) <= sel_pc;
-	-- LEDG() <= habilita_escrita;
+	 LEDG(5) <= habilita_escrita;
 	
-	LEDG(5) <= flag_z;
+	 LEDG(7) <= flag_z;
 	
 	-- LEDR(4 downto 0) <= out_pc(4 downto 0);
 	--LEDR(4 downto 0) <= imediate(4 downto 0);

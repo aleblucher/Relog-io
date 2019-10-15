@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Tue Oct 15 13:29:55 2019
+Tue Oct 15 16:01:09 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -10,7 +10,42 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |relogio
+ 13. Parameter Settings for User Entity Instance: decoder:DECODER
+ 14. Parameter Settings for User Entity Instance: IO_T:IO
+ 15. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG3
+ 16. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG2
+ 17. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG1
+ 18. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG
+ 19. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG4
+ 20. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG5
+ 21. Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG6
+ 22. Parameter Settings for User Entity Instance: memoria:ROM
+ 23. Parameter Settings for User Entity Instance: MUX2:MUX_PC
+ 24. Parameter Settings for User Entity Instance: ADDER:ADDER_1
+ 25. Parameter Settings for User Entity Instance: ADDER:ADDER_GENERIC
+ 26. Parameter Settings for User Entity Instance: SUBADDER:SUBADDER
+ 27. Parameter Settings for User Entity Instance: bancoRegistradores:BR
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:PC
+ 29. Port Connectivity Checks: "registradorGenerico:PC"
+ 30. Port Connectivity Checks: "ADDER:ADDER_GENERIC"
+ 31. Port Connectivity Checks: "ADDER:ADDER_1"
+ 32. Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_7"
+ 33. Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_3"
+ 34. Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_2"
+ 35. Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_1"
+ 36. Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_0"
+ 37. Port Connectivity Checks: "decoder:DECODER"
+ 38. Post-Synthesis Netlist Statistics for Top Partition
+ 39. Elapsed Time Per Partition
+ 40. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +71,20 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Oct 15 13:29:55 2019               ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 15 16:01:09 2019           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; Relogio                                         ;
 ; Top-level Entity Name              ; relogio                                         ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 452                                             ;
+;     Total combinational functions  ; 443                                             ;
+;     Dedicated logic registers      ; 203                                             ;
+; Total registers                    ; 203                                             ;
+; Total pins                         ; 112                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -150,11 +185,466 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++-----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
++-----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; bancoRegistradores.vhd            ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/bancoRegistradores.vhd            ;         ;
+; relogio.vhd                       ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd                       ;         ;
+; registradorGenerico.vhd           ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd           ;         ;
+; MUX.vhd                           ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/MUX.vhd                           ;         ;
+; ADDER.vhd                         ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/ADDER.vhd                         ;         ;
+; IO_T.vhd                          ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd                          ;         ;
+; SUBADDER.vhd                      ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd                      ;         ;
+; divisorGenerico.vhd               ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/divisorGenerico.vhd               ;         ;
+; memoria.vhd                       ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd                       ;         ;
+; output_files/conversorHex7Seg.vhd ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/output_files/conversorHex7Seg.vhd ;         ;
+; decoder.vhd                       ; yes             ; User VHDL File  ; /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd                       ;         ;
++-----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 452   ;
+;                                             ;       ;
+; Total combinational functions               ; 443   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 147   ;
+;     -- 3 input functions                    ; 61    ;
+;     -- <=2 input functions                  ; 235   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 265   ;
+;     -- arithmetic mode                      ; 178   ;
+;                                             ;       ;
+; Total registers                             ; 203   ;
+;     -- Dedicated logic registers            ; 203   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 112   ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 203   ;
+; Total fan-out                               ; 1820  ;
+; Average fan-out                             ; 2.09  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                              ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                         ; Entity Name         ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+---------------------+--------------+
+; |relogio                           ; 443 (2)             ; 203 (0)                   ; 0           ; 0            ; 0       ; 0         ; 112  ; 0            ; |relogio                                    ; relogio             ; work         ;
+;    |ADDER:ADDER_GENERIC|           ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|ADDER:ADDER_GENERIC                ; ADDER               ; work         ;
+;    |IO_T:IO|                       ; 321 (11)            ; 176 (8)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO                            ; IO_T                ; work         ;
+;       |conversorHex7Seg:HEX_7|     ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|conversorHex7Seg:HEX_7     ; conversorHex7Seg    ; work         ;
+;       |divisorGenerico:TEMPO_SEG1| ; 44 (44)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG1 ; divisorGenerico     ; work         ;
+;       |divisorGenerico:TEMPO_SEG2| ; 47 (47)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG2 ; divisorGenerico     ; work         ;
+;       |divisorGenerico:TEMPO_SEG3| ; 49 (49)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG3 ; divisorGenerico     ; work         ;
+;       |divisorGenerico:TEMPO_SEG4| ; 41 (41)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG4 ; divisorGenerico     ; work         ;
+;       |divisorGenerico:TEMPO_SEG5| ; 40 (40)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG5 ; divisorGenerico     ; work         ;
+;       |divisorGenerico:TEMPO_SEG6| ; 39 (39)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG6 ; divisorGenerico     ; work         ;
+;       |divisorGenerico:TEMPO_SEG|  ; 43 (43)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|IO_T:IO|divisorGenerico:TEMPO_SEG  ; divisorGenerico     ; work         ;
+;    |SUBADDER:SUBADDER|             ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|SUBADDER:SUBADDER                  ; SUBADDER            ; work         ;
+;    |bancoRegistradores:BR|         ; 11 (11)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|bancoRegistradores:BR              ; bancoRegistradores  ; work         ;
+;    |decoder:DECODER|               ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|decoder:DECODER                    ; decoder             ; work         ;
+;    |memoria:ROM|                   ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|memoria:ROM                        ; memoria             ; work         ;
+;    |registradorGenerico:PC|        ; 9 (9)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|registradorGenerico:PC             ; registradorGenerico ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++-----------------------------------------------------+------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------+------------------------+
+; SUBADDER:SUBADDER|zz                                ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[1]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[3]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[0]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[2]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[4]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[5]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[6]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[7]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; SUBADDER:SUBADDER|RESULT_SIGNAL[8]                  ; decoder:DECODER|Equal5 ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                        ;                        ;
++-----------------------------------------------------+------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; IO_T:IO|HEX4[1..4]                     ; Merged with IO_T:IO|HEX4[0]            ;
+; IO_T:IO|HEX4[6]                        ; Stuck at GND due to stuck port data_in ;
+; IO_T:IO|HEX4[0]                        ; Stuck at VCC due to stuck port data_in ;
+; IO_T:IO|HEX1[0..6]                     ; Stuck at GND due to stuck port data_in ;
+; IO_T:IO|HEX2[0..6]                     ; Stuck at GND due to stuck port data_in ;
+; IO_T:IO|HEX3[0..6]                     ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 27 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 203   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 25    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |relogio|decoder:DECODER|imediate[6] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogio|decoder:DECODER|imediate[0] ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; No         ; |relogio|decoder:DECODER|in_bank[8]  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |relogio|decoder:DECODER|in_bank[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |relogio ;
++----------------------------+-------+------------------------------------+
+; Parameter Name             ; Value ; Type                               ;
++----------------------------+-------+------------------------------------+
+; larguraBarramentoEnderecos ; 8     ; Signed Integer                     ;
+; larguraBarramentoDados     ; 8     ; Signed Integer                     ;
+; quantidadeLedsRed          ; 18    ; Signed Integer                     ;
+; quantidadeLedsGreen        ; 8     ; Signed Integer                     ;
+; quantidadeChaves           ; 18    ; Signed Integer                     ;
+; quantidadeBotoes           ; 4     ; Signed Integer                     ;
+; quantidadeDisplays         ; 8     ; Signed Integer                     ;
++----------------------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decoder:DECODER ;
++----------------------------+-------+-------------------------+
+; Parameter Name             ; Value ; Type                    ;
++----------------------------+-------+-------------------------+
+; largurabarramentoenderecos ; 8     ; Signed Integer          ;
+; largurabarramentodados     ; 8     ; Signed Integer          ;
+; quantidadeledsred          ; 18    ; Signed Integer          ;
+; quantidadeledsgreen        ; 8     ; Signed Integer          ;
+; quantidadechaves           ; 18    ; Signed Integer          ;
+; quantidadebotoes           ; 4     ; Signed Integer          ;
+; quantidadedisplays         ; 8     ; Signed Integer          ;
++----------------------------+-------+-------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; datawidth      ; 9     ; Signed Integer              ;
+; addrwidth      ; 3     ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG3 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 50000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG2 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG1 ;
++----------------+----------+-----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                ;
++----------------+----------+-----------------------------------------------------+
+; divisor        ; 12000000 ; Signed Integer                                      ;
++----------------+----------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG ;
++----------------+---------+-----------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                ;
++----------------+---------+-----------------------------------------------------+
+; divisor        ; 6000000 ; Signed Integer                                      ;
++----------------+---------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG4 ;
++----------------+---------+------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                 ;
++----------------+---------+------------------------------------------------------+
+; divisor        ; 3000000 ; Signed Integer                                       ;
++----------------+---------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG5 ;
++----------------+---------+------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                 ;
++----------------+---------+------------------------------------------------------+
+; divisor        ; 1500000 ; Signed Integer                                       ;
++----------------+---------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IO_T:IO|divisorGenerico:TEMPO_SEG6 ;
++----------------+--------+-------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                  ;
++----------------+--------+-------------------------------------------------------+
+; divisor        ; 750000 ; Signed Integer                                        ;
++----------------+--------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria:ROM ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; datawidth      ; 16    ; Signed Integer                  ;
+; addrwidth      ; 9     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX2:MUX_PC ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; larguradados   ; 9     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADDER:ADDER_1 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; n              ; 9     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADDER:ADDER_GENERIC ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; n              ; 9     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SUBADDER:SUBADDER ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; data_width     ; 9     ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: bancoRegistradores:BR ;
++---------------------+-------+--------------------------------------+
+; Parameter Name      ; Value ; Type                                 ;
++---------------------+-------+--------------------------------------+
+; larguradados        ; 9     ; Signed Integer                       ;
+; larguraendbancoregs ; 3     ; Signed Integer                       ;
++---------------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:PC ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:PC" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; enable ; Input ; Info     ; Stuck at VCC           ;
+; rst    ; Input ; Info     ; Stuck at GND           ;
++--------+-------+----------+------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADDER:ADDER_GENERIC"                                                                 ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ADDER:ADDER_1"                                                                         ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; a[8..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; carry   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_7" ;
++----------+-------+----------+------------------------------+
+; Port     ; Type  ; Severity ; Details                      ;
++----------+-------+----------+------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                 ;
+; negativo ; Input ; Info     ; Stuck at GND                 ;
+; overflow ; Input ; Info     ; Stuck at GND                 ;
++----------+-------+----------+------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_3" ;
++----------+-------+----------+------------------------------+
+; Port     ; Type  ; Severity ; Details                      ;
++----------+-------+----------+------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                 ;
+; negativo ; Input ; Info     ; Stuck at GND                 ;
+; overflow ; Input ; Info     ; Stuck at GND                 ;
++----------+-------+----------+------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_2" ;
++----------+-------+----------+------------------------------+
+; Port     ; Type  ; Severity ; Details                      ;
++----------+-------+----------+------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                 ;
+; negativo ; Input ; Info     ; Stuck at GND                 ;
+; overflow ; Input ; Info     ; Stuck at GND                 ;
++----------+-------+----------+------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_1" ;
++----------+-------+----------+------------------------------+
+; Port     ; Type  ; Severity ; Details                      ;
++----------+-------+----------+------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                 ;
+; negativo ; Input ; Info     ; Stuck at GND                 ;
+; overflow ; Input ; Info     ; Stuck at GND                 ;
++----------+-------+----------+------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "IO_T:IO|conversorHex7Seg:HEX_0" ;
++----------+-------+----------+------------------------------+
+; Port     ; Type  ; Severity ; Details                      ;
++----------+-------+----------+------------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND                 ;
+; negativo ; Input ; Info     ; Stuck at GND                 ;
+; overflow ; Input ; Info     ; Stuck at GND                 ;
++----------+-------+----------+------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder:DECODER"                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; in_io     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; enable_pc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 112                         ;
+; cycloneiii_ff         ; 203                         ;
+;     ENA               ; 25                          ;
+;     SLD               ; 9                           ;
+;     plain             ; 169                         ;
+; cycloneiii_lcell_comb ; 446                         ;
+;     arith             ; 178                         ;
+;         2 data inputs ; 164                         ;
+;         3 data inputs ; 14                          ;
+;     normal            ; 268                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 60                          ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 147                         ;
+;                       ;                             ;
+; Max LUT depth         ; 9.30                        ;
+; Average LUT depth     ; 4.15                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -163,7 +653,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Tue Oct 15 13:29:47 2019
+    Info: Processing started: Tue Oct 15 16:00:59 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
 Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradores.vhd
@@ -188,27 +678,164 @@ Info (12021): Found 2 design units, including 1 entities, in source file IO_T.vh
     Info (12022): Found design unit 1: IO_T-behv File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 32
     Info (12023): Found entity 1: IO_T File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file SUBADDER.vhd
-    Info (12022): Found design unit 1: SUBADDER-behv File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 23
+    Info (12022): Found design unit 1: SUBADDER-rtl File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 26
     Info (12023): Found entity 1: SUBADDER File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file divisorGenerico.vhd
     Info (12022): Found design unit 1: divisorGenerico-divInteiro File: /home/bruno/Documents/Insper/DesComp/Relog-io/divisorGenerico.vhd Line: 16
     Info (12023): Found entity 1: divisorGenerico File: /home/bruno/Documents/Insper/DesComp/Relog-io/divisorGenerico.vhd Line: 6
-Error (10500): VHDL syntax error at memoria.vhd(26) near text "0";  expecting "(", or "'", or "." File: /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd Line: 26
-Error (10500): VHDL syntax error at memoria.vhd(27) near text "0";  expecting "(", or "'", or "." File: /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd Line: 27
-Error (10500): VHDL syntax error at memoria.vhd(28) near text "0";  expecting "(", or "'", or "." File: /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd Line: 28
-Error (10500): VHDL syntax error at memoria.vhd(29) near text "1";  expecting "(", or "'", or "." File: /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd Line: 29
-Error (10500): VHDL syntax error at memoria.vhd(33) near text "return";  expecting "(", or "'", or "." File: /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd Line: 33
-Info (12021): Found 0 design units, including 0 entities, in source file memoria.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
+    Info (12022): Found design unit 1: memoria-assincrona File: /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd Line: 17
+    Info (12023): Found entity 1: memoria File: /home/bruno/Documents/Insper/DesComp/Relog-io/memoria.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file output_files/conversorHex7Seg.vhd
     Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/bruno/Documents/Insper/DesComp/Relog-io/output_files/conversorHex7Seg.vhd Line: 18
     Info (12023): Found entity 1: conversorHex7Seg File: /home/bruno/Documents/Insper/DesComp/Relog-io/output_files/conversorHex7Seg.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
-    Info (12022): Found design unit 1: decoder-arch File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 43
+    Info (12022): Found design unit 1: decoder-arch File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 45
     Info (12023): Found entity 1: decoder File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 5
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 5 errors, 0 warnings
-    Error: Peak virtual memory: 920 megabytes
-    Error: Processing ended: Tue Oct 15 13:29:55 2019
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:21
+Info (12127): Elaborating entity "relogio" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(45): object "in_io" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 45
+Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(48): object "carry" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at relogio.vhd(48): object "enable_pc" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 48
+Warning (10873): Using initial value X (don't care) for net "LEDR[17..9]" at relogio.vhd(28) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+Warning (10873): Using initial value X (don't care) for net "LEDG[6]" at relogio.vhd(29) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 29
+Warning (10873): Using initial value X (don't care) for net "LEDG[4..3]" at relogio.vhd(29) File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 29
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:DECODER" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 78
+Warning (10541): VHDL Signal Declaration warning at decoder.vhd(33): used implicit default value for signal "enable_pc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/decoder.vhd Line: 33
+Info (12128): Elaborating entity "IO_T" for hierarchy "IO_T:IO" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 94
+Warning (10541): VHDL Signal Declaration warning at IO_T.vhd(24): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at IO_T.vhd(40): object "IOMODE" assigned a value but never read File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 40
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG3" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 50
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG2" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 52
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG1" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 53
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 54
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG4" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 55
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG5" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 56
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "IO_T:IO|divisorGenerico:TEMPO_SEG6" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 57
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "IO_T:IO|conversorHex7Seg:HEX_0" File: /home/bruno/Documents/Insper/DesComp/Relog-io/IO_T.vhd Line: 61
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:ROM" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 117
+Info (12128): Elaborating entity "MUX2" for hierarchy "MUX2:MUX_PC" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 119
+Info (12128): Elaborating entity "ADDER" for hierarchy "ADDER:ADDER_1" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 122
+Info (12128): Elaborating entity "SUBADDER" for hierarchy "SUBADDER:SUBADDER" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at SUBADDER.vhd(41): signal "A_SIGNAL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at SUBADDER.vhd(41): signal "B_SIGNAL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at SUBADDER.vhd(42): signal "A_SIGNAL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at SUBADDER.vhd(42): signal "B_SIGNAL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at SUBADDER.vhd(45): signal "A_SIGNAL" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 45
+Warning (10631): VHDL Process Statement warning at SUBADDER.vhd(37): inferring latch(es) for signal or variable "RESULT_SIGNAL", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Warning (10631): VHDL Process Statement warning at SUBADDER.vhd(37): inferring latch(es) for signal or variable "zz", which holds its previous value in one or more paths through the process File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "zz" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[0]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[1]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[2]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[3]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[4]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[5]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[6]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[7]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (10041): Inferred latch for "RESULT_SIGNAL[8]" at SUBADDER.vhd(37) File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+Info (12128): Elaborating entity "bancoRegistradores" for hierarchy "bancoRegistradores:BR" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 129
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 137
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer CLK File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 53
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "bancoRegistradores:BR|registrador" is uninferred due to inappropriate RAM size File: /home/bruno/Documents/Insper/DesComp/Relog-io/bancoRegistradores.vhd Line: 34
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[1] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[3] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[0] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[2] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[4] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[5] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[6] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[7] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13012): Latch SUBADDER:SUBADDER|RESULT_SIGNAL[8] has unsafe behavior File: /home/bruno/Documents/Insper/DesComp/Relog-io/SUBADDER.vhd Line: 37
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal registradorGenerico:PC|q[1] File: /home/bruno/Documents/Insper/DesComp/Relog-io/registradorGenerico.vhd Line: 31
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 28
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 29
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 29
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX6[4]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX6[5]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 31
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "reset" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 17
+    Warning (15610): No output dependent on input pin "sw_controll[1]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "sw_controll[2]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "sw_controll[3]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "sw_controll[4]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "sw_controll[5]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 18
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[12]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[13]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[14]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[15]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 25
+    Warning (15610): No output dependent on input pin "SW[16]" File: /home/bruno/Documents/Insper/DesComp/Relog-io/relogio.vhd Line: 25
+Info (21057): Implemented 580 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 30 input pins
+    Info (21059): Implemented 82 output pins
+    Info (21061): Implemented 468 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 104 warnings
+    Info: Peak virtual memory: 985 megabytes
+    Info: Processing ended: Tue Oct 15 16:01:09 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:23
 
 
