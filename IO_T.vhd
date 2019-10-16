@@ -33,7 +33,7 @@ architecture behv of IO_T is
 SIGNAL hr: std_logic_vector(13 DOWNTO 0);
 SIGNAL min, min_dec: std_logic_vector(6 DOWNTO 0); --for debunggin only 
 SIGNAL saida_clk, saida_clk1, saida_clk2, saida_clk3, saida_clk4, saida_clk5, saida_clk6, teste_io_time, bagulho, teste_bagulho, habH0, habH1, habH2, habH3, reset, need_reset: std_logic;
-SIGNAL HEX_11, HEX_22, HEX_33, HEX_44: STD_LOGIC_VECTOR(6 downto 0);
+SIGNAL HEX_11, HEX_22, HEX_33, HEX_44, HEX_55: STD_LOGIC_VECTOR(6 downto 0);
 SIGNAL results, clk_out:	std_logic_vector(dataWidth-1 downto 0);
 SIGNAL HEX00, HEX11, HEX22, HEX33, HEX44 : STD_LOGIC_VECTOR(6 downto 0);
 
@@ -109,10 +109,12 @@ begin
 				if habH3 then 
 					HEX3 <= HEX_44;
 				end if;
-				if IO_ADDR = "110" and data(0) = '1' then 
-					HEX4 <= "0111111";
-				elsif IO_ADDR = "110" and data(0) = '0' then
-					HEX4 <= "0011111";
+				if (IO_ADDR = "110") then 
+--					if (data(0) = '1') then
+--						HEX_55 <= "1111000";
+--					else
+--						HEX_55 <= "0000111"
+--					end if;
 				end if;
 				
 			end if;
@@ -124,7 +126,7 @@ begin
 
 										  
 										 
-
+		HEX4 <= HEX_55;
 		HEX6 <= "111111" & result(0);
  
     -- the 3rd bit should be carry

@@ -1,7 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 --------------------------------------------------------
 
@@ -22,15 +21,18 @@ architecture behv of ADDER is
 
 -- define a temparary signal to store the result
 
-signal result: std_logic_vector(n downto 0);
+SIGNAL A_SIGNAL, B_SIGNAL, RESULT_SIGNAL: unsigned((n-1) downto 0);
+SIGNAL zz: std_logic;
  
 begin					  
  
+	A_SIGNAL <= unsigned(a);
+	B_SIGNAL <= unsigned(b);
+	
+	RESULT_SIGNAL <= B_SIGNAL + A_SIGNAL;
     -- the 3rd bit should be carry
    
-    result <= ('0' & A)+('0' & B);
-    sum <= result(n-1 downto 0);
-    carry <= result(n);
+    sum <= std_logic_vector(RESULT_SIGNAL);
 
 end behv;
 
